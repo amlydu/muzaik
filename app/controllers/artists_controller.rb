@@ -26,6 +26,9 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     @artist.name = @artist.name.split.map(&:capitalize).join(' ')
+    if @artist.name.include? " And "
+      @artist.name.sub! " And ", " and "
+    end
 
     respond_to do |format|
       if @artist.save
