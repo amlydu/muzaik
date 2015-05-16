@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @artist.name %>
@@ -12,7 +10,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @artist.photo %>
+  <%= image_tag(@artist.photo)%>
 </p>
 
 <p>
@@ -22,3 +20,4 @@
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+<%= link_to 'Add Album', new_album_path %>
