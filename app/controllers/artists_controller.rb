@@ -25,9 +25,11 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    @artist.name = @artist.name.split.map(&:capitalize).join(' ')
 
     respond_to do |format|
       if @artist.save
+        @artist.save_artist_biography
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
