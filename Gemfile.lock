@@ -164,6 +164,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  json
   nokogiri
   rails (= 4.2.1)
   sass-rails (~> 5.0)
