@@ -29,10 +29,11 @@ class ArtistsController < ApplicationController
     if @artist.name.include? " And "
       @artist.name.sub! " And ", " and "
     end
+    @artist.artist_echo_info
 
     respond_to do |format|
       if @artist.save
-        @artist.save_artist_echo_info
+        @artist.save_artist_wiki_discography
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
@@ -74,6 +75,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :biography, :photo, :genre)
+      params.require(:artist).permit(:name, :biography, :photo, :genre, albums_attributes: [:name])
     end
 end

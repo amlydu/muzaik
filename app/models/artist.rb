@@ -1,22 +1,27 @@
 class Artist < ActiveRecord::Base
   has_many :albums
+  accepts_nested_attributes_for :albums
   #songs we're seeing if this is inherited through albums
 
   TYPES = [nil, "musician", "group", "band"]
 
   def save_artist_wiki_biography
-  	TYPES.each do |type|
-  		response = wiki_api.get_artist_info(self.name, type)
-  		dom = Nokogiri::HTML(response.body)
-  		if response.code == 200
-  			summary = dom.css("#mw-content-text p").first
-        self.biography = summary.content
-        self.save
-      end
-  	end
+      wiki_page.css("#mw-content-text p").first
+      self.biography = summary.content
+      self.save
   end
 
-  def save_artist_echo_info
+
+  def save_artist_wiki_discography
+    discography = wiki_page.css("#mw-content-text > div.div-col.columns.column-count.column-count-2 > ul li i a").map {|link| [link.text.strip]}
+
+    artist_discography = discography.uniq.flatten
+    artist_discography.each do |album|
+      self.albums.create(name: album)
+    end
+  end
+
+  def artist_echo_info
     response = echno_nest_api.get_artist_info(self.name)
     body = JSON.parse response.body
 
@@ -24,7 +29,7 @@ class Artist < ActiveRecord::Base
     bios = body['response']['artists'][0]['biographies']
     full_bios = []
     bios.each do |bio|
-      if !(bio.include? "truncated")
+      if !(bio.include? "truncated") && bio['site'] == "wikipedia"
         full_bios.push(bio)
       end
     end
@@ -32,18 +37,22 @@ class Artist < ActiveRecord::Base
 
     self.photo = body['response']['artists'][0]['images'][1]['url']
 
-    genre = body['response']['artists'][0]['genres'][1]['name']
-    self.genre = genre.capitalize
-
-    self.save
+    self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
   end
 
   private
     def wiki_api
-      @api ||= WikiApi.new
+      WikiApi.new
     end
 
     def echno_nest_api
-      @api ||= EchoNestApi.new
+      EchoNestApi.new
     end
+
+    def wiki_page
+      TYPES.each do |type|
+        response = wiki_api.get_artist_info(self.name, type)
+      return Nokogiri::HTML(response.body) if response.code == 200
+    end
+  end
 end
