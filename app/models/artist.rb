@@ -11,16 +11,6 @@ class Artist < ActiveRecord::Base
       self.save
   end
 
-
-  def save_artist_wiki_discography
-    discography = wiki_page.css("#mw-content-text > div.div-col.columns.column-count.column-count-2 > ul li i a").map {|link| [link.text.strip]}
-
-    artist_discography = discography.uniq.flatten
-    artist_discography.each do |album|
-      self.albums.create(name: album)
-    end
-  end
-
   def save_musicbrainz_discography
     response = musicbrainz_api.get_artist_info(self.name)
     dom = Nokogiri::XML(response.body)
