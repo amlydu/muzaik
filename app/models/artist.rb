@@ -21,6 +21,15 @@ class Artist < ActiveRecord::Base
     end
   end
 
+  def save_musicbrainz_discography
+    response = musicbrainz_api.get_artist_info(self.name)
+    dom = Nokogiri::XML(response.body)
+    albums = dom.css('release-group title').map { |e| e.content }
+    albums.uniq.each do |album|
+      self.albums.create(name: album)
+    end
+  end
+
   def artist_echo_info
     response = echno_nest_api.get_artist_info(self.name)
     body = JSON.parse response.body
@@ -47,6 +56,10 @@ class Artist < ActiveRecord::Base
 
     def echno_nest_api
       EchoNestApi.new
+    end
+
+    def musicbrainz_api
+      MusicbrainzApi.new
     end
 
     def wiki_page

@@ -33,7 +33,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
-        @artist.save_artist_wiki_discography
+        @artist.save_musicbrainz_discography
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
