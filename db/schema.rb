@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516200121) do
+ActiveRecord::Schema.define(version: 20150519193509) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20150516200121) do
     t.text     "biography"
     t.string   "photo"
     t.string   "genre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "discography"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -38,8 +39,10 @@ ActiveRecord::Schema.define(version: 20150516200121) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "producer"
+    t.string   "featured_artist"
   end
 
   create_table "users", force: :cascade do |t|
