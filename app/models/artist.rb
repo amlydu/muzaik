@@ -92,6 +92,20 @@ class Artist < ActiveRecord::Base
     end
   end
 
+  def get_album_cover
+    self.albums.find_each do |album|
+      response = HTTParty.get("http://coverartarchive.org/release/#{album.external_album_id}")
+      if response.code == 200
+        dom = JSON.parse Nokogiri::HTML(response.body)
+        album.photo = dom['images'][0]['image']
+        album.save
+      else
+        album.photo = nil
+        album.save
+      end
+    end
+  end
+
   private
   def wiki_api
     WikiApi.new
