@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-transport'
+gem 'elasticsearch'
 gem 'nokogiri'
 gem 'httparty'
 gem 'devise'
