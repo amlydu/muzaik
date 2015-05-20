@@ -17,7 +17,7 @@
         <td><%= album.name %></td>
         <td><%= album.artist.name %></td>
         <td><%= album.release_date %></td>
-        <td><%= album.photo %></td>
+        <td><%= image_tag album.photo %></td>
         <td><%= link_to 'Show', album %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
