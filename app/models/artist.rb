@@ -81,9 +81,15 @@ class Artist < ActiveRecord::Base
   def get_album_tracklist
     self.albums.find_each do |album|
       response = HTTParty.get("http://musicbrainz.org/ws/2/release/#{album.external_album_id}?inc=recordings")
-    end
+      dom = Nokogiri::XML(response.body)
 
-    p response
+      #array of songs
+      tracklist = dom.css('track title').map {|e| e.content}
+      tracklist.each do |song_name|
+        album.songs.create(name: song_name)
+        #self.albums.find_by(external_album_id: "album.external_album_id").songs.create(name: song_name)
+      end
+    end
   end
 
   private
