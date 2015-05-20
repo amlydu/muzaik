@@ -85,9 +85,11 @@ class Artist < ActiveRecord::Base
 
       #array of songs
       tracklist = dom.css('track title').map {|e| e.content}
+      date = dom.css('date').map {|e| e.content}
+      album.release_date = date.first
+      album.save
       tracklist.each do |song_name|
         album.songs.create(name: song_name)
-        #self.albums.find_by(external_album_id: "album.external_album_id").songs.create(name: song_name)
       end
     end
   end
