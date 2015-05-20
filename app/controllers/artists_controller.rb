@@ -36,6 +36,7 @@ class ArtistsController < ApplicationController
         @artist.get_musicbrainz_albums_and_ids
         @artist.get_album_tracklist
         @artist.get_album_cover
+        @artist.related_artists_echo
         @artist.save
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }

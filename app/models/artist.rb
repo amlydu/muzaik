@@ -30,16 +30,18 @@ class Artist < ActiveRecord::Base
 
       self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
   end
-  # def save_musicbrainz_discography
-  #   response = musicbrainz_api.get_artist_info(self.name)
-  #   dom = Nokogiri::XML(response.body)
-  #   albums = dom.css('release title').map { |e| e.content }
-  #   self.album.external_album_id = dom.css('release-list release').first.attributes['id'].value
-  #   albums.uniq.each do |album|
-  #     self.albums.create(name: album)
-  #   end
-  # end
 
+  def related_artists_echo
+    response = HTTParty.get("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{self.name.squish.tr(" ","+")}")
+    body = JSON.parse response.body
+    artists = body['response']['artists']
+    related_artists = []
+
+    artists.each do |artist|
+      related_artists << artist['name']
+    end
+    self.related_artist = related_artists
+  end
 
   def get_musicbrainz_albums_and_ids
     response = musicbrainz_api.get_artist_info(self.name)
