@@ -12,14 +12,55 @@ class Artist < ActiveRecord::Base
       self.save
   end
 
-  def save_musicbrainz_discography
-    response = musicbrainz_api.get_artist_info(self.name)
-    dom = Nokogiri::XML(response.body)
-    albums = dom.css('release-group title').map { |e| e.content }
-    albums.uniq.each do |album|
-      self.albums.create(name: album)
-    end
+  # def save_musicbrainz_discography
+  #   response = musicbrainz_api.get_artist_info(self.name)
+  #   dom = Nokogiri::XML(response.body)
+  #   albums = dom.css('release title').map { |e| e.content }
+  #   self.album.external_album_id = dom.css('release-list release').first.attributes['id'].value
+  #   albums.uniq.each do |album|
+  #     self.albums.create(name: album)
+  #   end
+  # end
+
+
+ def get_musicbrainz_albums_and_ids
+  response = musicbrainz_api.get_artist_info(self.name)
+  dom = Nokogiri::XML(response.body)
+
+  #getting all album names
+  album = dom.css('release-list release title')
+
+  #getting all album ids
+  album_id = dom.css('release-list release')
+
+  #initializing arrays
+  records = []
+  ids = []
+
+  #populating above arrays album names and associated musicbrainz ids
+  until album_id.length == 0 
+    ids << album_id.pop.attributes['id'].value
   end
+  until album.length == 0 
+    records << album.pop.children.text
+  end
+
+  combined_hash = {}
+
+  #creating one hash mapping record names to ids
+  ids.each_with_index do |val, key|
+    combined_hash[records[key]] = val
+  end
+
+  #saving values in albums model
+  combined_hash.each do |key, val|
+    self.albums.create(name: key, external_album_id: val)
+  end
+ end
+
+ # assign external_album_ids to albums
+ #  iterate through albums, running Nokogiri to get tracklist for each album and save it. \
+
 
   def artist_echo_info
     response = echno_nest_api.get_artist_info(self.name)
@@ -39,6 +80,9 @@ class Artist < ActiveRecord::Base
 
     self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
   end
+
+ 
+
 
   private
     def wiki_api
