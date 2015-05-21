@@ -25,21 +25,13 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
-    @artist.name = @artist.name.split.map(&:capitalize).join(' ')
-    if @artist.name.include? " And "
-      @artist.name.sub! " And ", " and "
-    end
 
     respond_to do |format|
       if @artist.save
-        @artist.artist_echo_info
-        @artist.get_musicbrainz_albums_and_ids
-        @artist.get_album_tracklist
-        @artist.save
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
-        format.html { render :new }
+        format.html { redirect_to new_artist_path, notice: "Spindex couldn't index that request. Maybe try a different spelling." }
         format.json { render json: @artist.errors, status: :unprocessable_entity }
       end
     end
@@ -62,6 +54,8 @@ class ArtistsController < ApplicationController
   # DELETE /artists/1
   # DELETE /artists/1.json
   def destroy
+    @artist.destroy_songs
+    @artist.albums.destroy_all
     @artist.destroy
     respond_to do |format|
       format.html { redirect_to artists_url, notice: 'Artist was successfully destroyed.' }
