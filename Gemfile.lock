@@ -45,7 +45,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (4.0.5)
+    byebug (5.0.0)
       columnize (= 0.9.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -88,7 +88,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
-    jbuilder (2.2.13)
+    jbuilder (2.2.16)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -109,11 +109,8 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-<<<<<<< HEAD
-    pr_geohash (1.0.0)
-=======
     pg (0.18.1)
->>>>>>> f0bfe6009b469ea2219c470cf9a6098822628b24
+    pr_geohash (1.0.0)
     rack (1.6.1)
     rack-test (0.6.3)
       rack (>= 1.0)
