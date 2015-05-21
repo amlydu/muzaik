@@ -4,6 +4,13 @@ class Artist < ActiveRecord::Base
   accepts_nested_attributes_for :albums
   #songs we're seeing if this is inherited through albums
 
+  def format_name
+    self.name = self.name.split.map(&:capitalize).join(' ')
+    if self.name.include? " And "
+      self.name.sub! " And ", " and "
+    end
+  end
+
   TYPES = [nil, "musician", "group", "band"]
 
   def save_artist_wiki_biography
