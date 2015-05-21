@@ -43,8 +43,8 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
           <!-- CHANGE DASHBOARD URL/BASE!!-->
-          <li class="<%= is_active?(artists_path) %>">
-            <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Dashboard'.html_safe, artists_path %>
+          <li class="<%= is_active?(dashboard_path) %>">
+            <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Dashboard'.html_safe, dashboard_path %>
           </li>
           <li class="<%= is_active?(artists_path) %>">
             <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Artists'.html_safe, artists_path %>

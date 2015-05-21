@@ -1,6 +1,9 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
+
+  def dashboard
+  end
   # GET /artists
   # GET /artists.json
   def index
