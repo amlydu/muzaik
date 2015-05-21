@@ -1,3 +1,10 @@
+
+<% if @artist.id == nil %>
+<p>
+  I'm sorry, we couldn't find that artist. Maybe a different spelling will do the trick...
+</p>
+<% else %>
+
 <p>
   <strong>Name:</strong>
   <%= @artist.name %>
@@ -21,3 +28,4 @@
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
 <%= link_to 'Add Album', new_album_path %>
+<% end %>

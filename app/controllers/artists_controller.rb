@@ -26,9 +26,9 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     @artist.format_name
-    
+
     respond_to do |format|
-      if @artist.save
+      if @artist.genre != "" && @artist.save
         @artist.artist_echo_info
         @artist.get_musicbrainz_albums_and_ids
         @artist.get_album_tracklist
