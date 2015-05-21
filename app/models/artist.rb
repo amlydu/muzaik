@@ -110,6 +110,12 @@ class Artist < ActiveRecord::Base
     end
   end
 
+  def destroy_songs
+    self.albums.each do |album|
+      album.songs.destroy_all
+    end
+  end
+
   private
   def wiki_api
     WikiApi.new
