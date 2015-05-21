@@ -3,9 +3,8 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-  def index
-    @albums = Album.all
-  end
+    def index
+    end
 
   # GET /albums/1
   # GET /albums/1.json

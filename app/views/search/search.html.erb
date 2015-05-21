@@ -1,17 +1,21 @@
-<%= form_for search_path, method: :get do |f| %>
-  <p>
-    <%= f.label "Search for" %>
-    <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Go", name: nil %>
-  </p>
-<% end %>
+<%= render 'search/form' %>
 
 <ul>
-  <% @artist.each do |article| %>
+  <% @artists.each do |artist| %>
     <li>
       <h3>
-        <%= link_to artist.title, controller: "artist", action: "show", id: artist._id%>
+        <%= link_to artist.name, artist_path(artist) %>
+
       </h3>
     </li>
   <% end %>
 </ul>
+
+<% if @albums.any? %>
+
+  <h2>Matching Albums</h2>
+  <% @albums.each do |album| %>
+    <br>
+    <%= link_to album.name, album_path(album) %>
+  <% end %>
+<% end %>
