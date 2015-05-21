@@ -1,5 +1,11 @@
 class Artist < ActiveRecord::Base
+  before_validation :format_name, :artist_echo_info
+  after_create  :get_musicbrainz_albums_and_ids,
+                :get_album_tracklist,
+                :get_album_cover,
+                :related_artists_echo
   validates :name, presence: true, uniqueness: true
+  validates :genre, length: { minimum: 1 }
   has_many :albums
   accepts_nested_attributes_for :albums
   #songs we're seeing if this is inherited through albums

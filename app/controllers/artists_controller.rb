@@ -25,20 +25,13 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
-    @artist.format_name
 
     respond_to do |format|
-      if @artist.genre != "" && @artist.save
-        @artist.artist_echo_info
-        @artist.get_musicbrainz_albums_and_ids
-        @artist.get_album_tracklist
-        @artist.get_album_cover
-        @artist.related_artists_echo
-        @artist.save
+      if @artist.save
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
-        format.html { render :new }
+        format.html { redirect_to new_artist_path, notice: "Spindex couldn't index that request. Maybe try a different spelling." }
         format.json { render json: @artist.errors, status: :unprocessable_entity }
       end
     end
