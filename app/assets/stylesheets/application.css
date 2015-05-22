@@ -21,11 +21,11 @@
   margin: 0;
   padding-top: 0;
 }
-ul {
+nav ul {
   list-style: none;
   color: white;
 }
-ul li {
+nav ul li {
   display: inline-block;
 }
 img {

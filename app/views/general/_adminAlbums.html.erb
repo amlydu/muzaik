@@ -10,6 +10,7 @@
       <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
+  <%= link_to 'See Album Songs', album_songs_path %>
   <%= link_to 'New Album', new_album_path %>
 <% else %>
   <% @albums.each do |album| %>
@@ -21,4 +22,5 @@
       <td><%= link_to 'Show', album %></td>
     </tr>
   <% end %>
+  <%= link_to 'See Album Songs', album_songs_path %>
 <% end %>
