@@ -1,0 +1,5 @@
+<% if current_user.try(:admin?) %>
+  <%= render 'form' %>
+<% else %>
+  <%= render "general/oops"%>
+<% end %>
