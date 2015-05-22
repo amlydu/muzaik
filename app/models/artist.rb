@@ -1,8 +1,21 @@
 class Artist < ActiveRecord::Base
+  before_validation :format_name, :artist_echo_info
+  after_create  :get_musicbrainz_albums_and_ids,
+                :get_album_tracklist,
+                :get_album_cover,
+                :related_artists_echo
   validates :name, presence: true, uniqueness: true
+  validates :genre, length: { minimum: 1 }
   has_many :albums
   accepts_nested_attributes_for :albums
   #songs we're seeing if this is inherited through albums
+
+  def format_name
+    self.name = self.name.split.map(&:capitalize).join(' ')
+    if self.name.include? " And "
+      self.name.sub! " And ", " and "
+    end
+  end
 
   TYPES = [nil, "musician", "group", "band"]
 
@@ -15,7 +28,8 @@ class Artist < ActiveRecord::Base
   def artist_echo_info
     response = echno_nest_api.get_artist_info(self.name)
     body = JSON.parse response.body
-
+    # The API returns obscure results. The following line will block invalid characters and results that don't contain related info.
+    if body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != []
       #The biography bucket returns mostly truncated results. The following code will return only full results.
       bios = body['response']['artists'][0]['biographies']
       full_bios = []
@@ -29,17 +43,22 @@ class Artist < ActiveRecord::Base
       self.photo = body['response']['artists'][0]['images'][1]['url']
 
       self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
+    end
   end
-  # def save_musicbrainz_discography
-  #   response = musicbrainz_api.get_artist_info(self.name)
-  #   dom = Nokogiri::XML(response.body)
-  #   albums = dom.css('release title').map { |e| e.content }
-  #   self.album.external_album_id = dom.css('release-list release').first.attributes['id'].value
-  #   albums.uniq.each do |album|
-  #     self.albums.create(name: album)
-  #   end
-  # end
 
+  def related_artists_echo
+    response = HTTParty.get("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{self.name.squish.tr(" ","+")}")
+    body = JSON.parse response.body
+    if body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != []
+      artists = body['response']['artists']
+      related_artists = []
+
+      artists.each do |artist|
+        related_artists << artist['name']
+      end
+      self.related_artist = related_artists
+    end
+  end
 
   def get_musicbrainz_albums_and_ids
     response = musicbrainz_api.get_artist_info(self.name)
@@ -105,6 +124,12 @@ class Artist < ActiveRecord::Base
         album.photo = nil
         album.save
       end
+    end
+  end
+
+  def destroy_songs
+    self.albums.each do |album|
+      album.songs.destroy_all
     end
   end
 
