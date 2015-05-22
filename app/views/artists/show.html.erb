@@ -1,31 +1,30 @@
 
 <% if @artist.id == nil %>
-<p>
-  I'm sorry, we couldn't find that artist. Maybe a different spelling will do the trick...
-</p>
+  <p>
+    I'm sorry, we couldn't find that artist. Maybe a different spelling will do the trick...
+  </p>
 <% else %>
+  <p>
+    <strong>Name:</strong>
+    <%= @artist.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+  <p>
+    <strong>Biography:</strong>
+    <%= @artist.biography %>
+  </p>
 
-<p>
-  <strong>Biography:</strong>
-  <%= @artist.biography %>
-</p>
+  <p>
+    <strong>Photo:</strong>
+    <%= image_tag(@artist.photo)%>
+  </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag(@artist.photo)%>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @artist.genre %>
-</p>
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
-<%= link_to 'Add Album', new_album_path %>
+  <p>
+    <strong>Genre:</strong>
+    <%= @artist.genre %>
+  </p>
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'Edit', edit_artist_path(@artist) %> |
+  <% end %>
+  <%= link_to 'Back', artists_path %>
 <% end %>
