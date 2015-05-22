@@ -1,7 +1,7 @@
 <h1>Songs by Album</h1>
 
 <% @albums.each do |album| %>
-  <h2><%= album.name %> <span>(<%= album.songs.count %> Songs): <%= %></span></h2>
+  <h2><%= album.name %> <span class ="smaller">(<%= album.songs.count %> Songs) <%= album.artist.name %></span></h2>
   <ul>
     <% album.songs.each do |song| %>
       <li><%= song.name %></li>
