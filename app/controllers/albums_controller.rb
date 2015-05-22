@@ -1,6 +1,12 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
+  def album_songs
+    albums = Album.all
+    #alphabetical order
+    @albums = albums.sort_by &:name
+
+  end
   # GET /albums
   # GET /albums.json
   def index
