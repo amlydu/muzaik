@@ -1,0 +1,17 @@
+<% if current_user.try(:admin?) %>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.name %></td>
+      <td><%= link_to 'Show', song %></td>
+      <td><%= link_to 'Edit', edit_song_path(song) %></td>
+      <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+<% else %>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><strong><%= song.name %></strong> (Album: <%= song.album.name %>)</td>
+      <td><%= link_to 'Show', song %></td>
+    </tr>
+  <% end %>
+<% end %>
