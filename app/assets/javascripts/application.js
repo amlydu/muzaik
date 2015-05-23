@@ -15,7 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){$('.accordion h2').click(function() {
+/*********************************************************************
+Content Information Toggling
+*********************************************************************/
+
+/* Album Songs */
+
+$(function(){
+  $('.accordion h2').click(function() {
   $(this).toggleClass('active').find('i').toggleClass('fa-plus fa-minus')
     .closest('h2').siblings('h2')
     .removeClass('active').find('i').removeClass('fa-minus').addClass('fa-plus');
