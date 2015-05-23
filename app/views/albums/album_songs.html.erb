@@ -1,10 +1,19 @@
-<h1>Songs by Album</h1>
-
-<% @albums.each do |album| %>
-  <h2><%= album.name %> <span class ="smaller">(<%= album.songs.count %> Songs) <%= album.artist.name %></span></h2>
-  <ul>
-    <% album.songs.each do |song| %>
-      <li><%= song.name %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div>
+  <h1>Songs by Album <span class ="smaller">(A-Z)</span></h1>
+  <% @albums.each do |album| %>
+    <div class="accordion">
+      <h2 class="accordion_title">
+        <span class="album_title"><%= album.name %></span>
+        <br />
+        <span class ="smaller">(<%= album.songs.count %> Songs) <%= album.artist.name %></span><i class="accordion_icon fa fa-plus"></i>
+      </h2>
+      <div class="accordion_content">
+        <ul>
+          <% album.songs.each do |song| %>
+            <li><%= song.name %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
