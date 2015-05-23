@@ -43,7 +43,8 @@ class Artist < ActiveRecord::Base
       self.photo = body['response']['artists'][0]['images'][1]['url']
 
       self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
-    end
+      
+      self.hotttnesss = body['response']['artists'][0]['hotttnesss']
   end
 
   def related_artists_echo
