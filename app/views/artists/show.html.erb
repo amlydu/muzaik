@@ -23,6 +23,18 @@
     <strong>Genre:</strong>
     <%= @artist.genre %>
   </p>
+  <p>
+    <strong>Related Artists:</strong>
+    <% arr = @artist.related_artist.split(", ") %>
+    <% arr.each do |art| %>
+    <% name = art.split.map(&:capitalize).join(' ') %>
+      <% if Artist.exists?(name: name) %>
+        <%= link_to art, artist_path(Artist.find_by(name: name)) %>
+      <% else %>
+        <%= p name %>
+      <% end %>
+    <% end %>
+  </p>
   <% if current_user.try(:admin?) %>
     <%= link_to 'Edit', edit_artist_path(@artist) %> |
   <% end %>

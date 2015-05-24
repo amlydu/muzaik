@@ -6,6 +6,15 @@
       <td><%= artist.biography %></td>
       <td><%= image_tag(artist.photo) %></td>
       <td><%= artist.genre %></td>
+      <% arr = artist.related_artist.split(", ") %>
+      <% arr.each do |art| %>
+      <% name = art.split.map(&:capitalize).join(' ') %>
+        <% if Artist.exists?(name: name) %>
+          <td><%= link_to art, artist_path(Artist.find_by(name: name)) %></td>
+        <% else %>
+          <td><%= p name %></td>
+        <% end %>
+      <% end %>
       <td><%= link_to 'Show', artist %></td>
       <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
       <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -19,6 +28,15 @@
       <td><%= artist.biography %></td>
       <td><%= image_tag(artist.photo) %></td>
       <td><%= artist.genre %></td>
+      <% arr = artist.related_artist.split(", ") %>
+      <% arr.each do |art| %>
+      <% name = art.split.map(&:capitalize).join(' ') %>
+        <% if Artist.exists?(name: name) %>
+          <td><%= link_to art, artist_path(Artist.find_by(name: name)) %></td>
+        <% else %>
+          <td><%= p name %></td>
+        <% end %>
+      <% end %>
       <td><%= link_to 'Show', artist %></td>
     </tr>
   <% end %>
