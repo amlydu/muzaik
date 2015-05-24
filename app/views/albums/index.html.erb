@@ -14,20 +14,7 @@
   </thead>
 
   <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.name %></td>
-        <td><%= album.artist.name %></td>
-        <td><%= album.release_date %></td>
-        <td><%= image_tag album.photo %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render 'general/adminAlbums' %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Album', new_album_path %>

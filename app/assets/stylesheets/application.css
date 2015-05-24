@@ -21,18 +21,74 @@
   margin: 0;
   padding-top: 0;
 }
-
-ul {
+nav ul {
   list-style: none;
+  color: white;
 }
-
+nav ul li {
+  display: inline-block;
+}
 img {
   height: 250px;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+input {
+  color: black;
 }
 
 /************************************************************************************
 Artist Styling
 ************************************************************************************/
+
+/************************************************************************************
+Albums Styling
+************************************************************************************/
+
+/* Dropdown Toggle CSS styles*/
+
+.accordion {
+  border-top: 1px solid #c1c1c1;
+}
+.accordion h2 {
+  border: 1px solid #c1c1c1;
+  border-top: 0px solid #c1c1c1;
+  margin: 0px;
+  padding: 10px 15px;
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+}
+.accordion h2 span.smaller,
+h1 span.smaller {
+  font-size: 12px;
+}
+.accordion h2 span.album_title {
+  font-weight: bold;
+  font-size: 17px;
+}
+.accordion h2 .accordion_icon {
+  float: right;
+}
+.accordion h2.active {
+  background: #DBDBDB;
+}
+.accordion_content {
+  margin: 0;
+  padding: 15px;
+  border-left: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+/************************************************************************************
+Songs Styling
+************************************************************************************/
+
 
 /************************************************************************************
 Devise Form Styling

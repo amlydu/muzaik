@@ -23,4 +23,5 @@ class Album < ActiveRecord::Base
   end
 
 ######################Search Tutorial ####################
+
 end

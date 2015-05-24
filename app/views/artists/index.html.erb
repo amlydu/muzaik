@@ -1,7 +1,11 @@
 
 
+
 <h1>Listing Artists</h1>
 <%= render 'search/form' %>
+
+
+<h1>All Artists</h1>
 
 
 <table>
@@ -16,21 +20,6 @@
   </thead>
 
   <tbody>
-    <% @artists.each do |artist| %>
-      <tr>
-        <td><%= artist.name %></td>
-        <td><%= artist.biography %></td>
-        <td><%= image_tag(artist.photo) %></td>
-        <td><%= artist.genre %></td>
-        <td><%= link_to 'Show', artist %></td>
-        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <%= render "general/adminArtists" %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Artist', new_artist_path %>
-

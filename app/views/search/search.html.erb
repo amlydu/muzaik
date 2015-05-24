@@ -1,5 +1,7 @@
 <%= render 'search/form' %>
 
+<h1>Search Results</h1>
+<% if @artists.any? %>
 <ul>
   <% @artists.each do |artist| %>
     <li>
@@ -11,6 +13,8 @@
   <% end %>
 </ul>
 
+<% end %>
+
 <% if @albums.any? %>
 
   <h2>Matching Albums</h2>
@@ -18,4 +22,9 @@
     <br>
     <%= link_to album.name, album_path(album) %>
   <% end %>
+<% end %>
+
+<% if !(@artists.any?) && !(@albums.any?) %>
+<h2> Can't find what you're looking for?</h2>
+<%= render "general/adminArtists" %>
 <% end %>

@@ -10,7 +10,6 @@ class Artist < ActiveRecord::Base
   accepts_nested_attributes_for :albums
   #songs we're seeing if this is inherited through albums
 
-<<<<<<< HEAD
 ################ Search tutorial #############################
   searchable do
     text :name
@@ -31,7 +30,7 @@ class Artist < ActiveRecord::Base
 ######################Search Tutorial ####################
 
 
-=======
+
   def format_name
     self.name = self.name.split.map(&:capitalize).join(' ')
     if self.name.include? " And "
@@ -39,7 +38,6 @@ class Artist < ActiveRecord::Base
     end
   end
 
->>>>>>> f0bfe6009b469ea2219c470cf9a6098822628b24
   TYPES = [nil, "musician", "group", "band"]
 
   def save_artist_wiki_biography
@@ -66,6 +64,8 @@ class Artist < ActiveRecord::Base
       self.photo = body['response']['artists'][0]['images'][1]['url']
 
       self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
+
+      self.hotttnesss = body['response']['artists'][0]['hotttnesss']
     end
   end
 

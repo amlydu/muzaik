@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   resources :artists
 
   root 'artists#index'
+
   get 'search', to: 'search#search', as: "search"
+
+  get 'dashboard' => 'artists#dashboard'
+  get 'album_songs' => 'albums#album_songs'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

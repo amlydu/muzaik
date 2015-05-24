@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+/*********************************************************************
+Content Information Toggling
+*********************************************************************/
+
+/* Album Songs */
+
+$(function(){
+  $('.accordion h2').click(function() {
+  $(this).toggleClass('active').find('i').toggleClass('fa-plus fa-minus')
+    .closest('h2').siblings('h2')
+    .removeClass('active').find('i').removeClass('fa-minus').addClass('fa-plus');
+    $(this).next('.accordion_content').slideToggle().siblings('.accordion_content').slideUp();
+  });
+});
+
+$(function(){$('.accordion_content').hide();});

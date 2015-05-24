@@ -37,3 +37,22 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+<!-- TURN INTO TABLE TO MORE EASILY READ THROUGH
+     Figure Out how to capture value when saved-->
+<% if current_user.try(:admin?) %>
+  <h3>Listing All Users</h3>
+  <% User.all.each do |user| %>
+    <ul>
+      <% if user.admin? %>
+        <li><%= user.email %></li>
+      <% else %>
+        <li><%= user.email %>
+          <% if user.admin != true %>
+            <%= button_tag 'Make Admin'%>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

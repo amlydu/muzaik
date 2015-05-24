@@ -1,10 +1,16 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
+
+  def dashboard
+  end
   # GET /artists
   # GET /artists.json
   def index
+
    @artists=Artist.all
+    artists = Artist.all
+    @artists = artists.sort_by &:name
   end
 
   # GET /artists/1
@@ -71,6 +77,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :biography, :photo, :genre, :related_artist, albums_attributes: [:name])
+      params.require(:artist).permit(:name, :biography, :photo, :genre, :related_artist, :hotttnesss, albums_attributes: [:name])
     end
 end
