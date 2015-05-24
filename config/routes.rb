@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :albums
   resources :artists
 
-  root 'artists#index'
+  root 'artists#landing'
   get 'dashboard' => 'artists#dashboard'
   get 'album_songs' => 'albums#album_songs'
   # The priority is based upon order of creation: first created -> highest priority.
