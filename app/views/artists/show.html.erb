@@ -23,6 +23,10 @@
     <strong>Genre:</strong>
     <%= @artist.genre %>
   </p>
+  <p>
+    <strong>Related Artists:</strong>
+    <%= @artist.related_artist %>
+  </p>
   <% if current_user.try(:admin?) %>
     <%= link_to 'Edit', edit_artist_path(@artist) %> |
   <% end %>
