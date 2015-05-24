@@ -50,18 +50,15 @@ class Artist < ActiveRecord::Base
   def related_artists_echo
     response = HTTParty.get("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{self.name.squish.tr(" ","+")}")
     body = JSON.parse response.body
-    p response.code
     if body['response']['artists'] != nil #body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != []
       artists = body['response']['artists']
-      related_artists = []
+      related_artists = ""
 
-      artists.each do |artist|
-        related_artists << artist['name']
+      artists[0..3].each do |artist|
+        related_artists << artist['name'] + ", "
       end
-      self.related_artist = related_artists
+      self.related_artist = related_artists + artists[4]['name']
     end
-    p artists
-    p related_artists
   end
 
   def get_musicbrainz_albums_and_ids
