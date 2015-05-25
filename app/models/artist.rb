@@ -7,7 +7,6 @@ class Artist < ActiveRecord::Base
   validates :genre, length: { minimum: 1 }
   has_many :albums
   accepts_nested_attributes_for :albums
-  #songs we're seeing if this is inherited through albums
 
 ################ Search tutorial #############################
   searchable do

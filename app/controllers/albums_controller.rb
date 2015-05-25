@@ -5,12 +5,12 @@ class AlbumsController < ApplicationController
     albums = Album.all
     #alphabetical order
     @albums = albums.sort_by &:name
-
   end
   # GET /albums
   # GET /albums.json
-    def index
-    end
+  def index
+    self.album_songs
+  end
 
   # GET /albums/1
   # GET /albums/1.json
