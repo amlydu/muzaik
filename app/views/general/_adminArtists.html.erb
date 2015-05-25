@@ -3,7 +3,7 @@
   <% @artists.each do |artist| %>
     <tr>
       <td><%= artist.name %></td>
-      <td><%= artist.biography %></td>
+      <td><%= simple_format(artist.biography) %></td>
       <td><%= image_tag(artist.photo) %></td>
       <td><%= artist.genre %></td>
       <% arr = artist.related_artist.split(", ") %>
@@ -25,7 +25,7 @@
   <% @artists.each do |artist| %>
     <tr>
       <td><%= artist.name %></td>
-      <td><%= artist.biography %></td>
+      <td><%= simple_format(artist.biography) %></td>
       <td><%= image_tag(artist.photo) %></td>
       <td><%= artist.genre %></td>
       <% arr = artist.related_artist.split(", ") %>
