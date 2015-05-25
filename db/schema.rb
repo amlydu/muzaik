@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150523161229) do
     t.string   "genre"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.text     "discography"
     t.string   "related_artist"
     t.float    "hotttnesss"
   end

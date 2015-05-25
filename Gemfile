@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 gem 'nokogiri'
 gem 'httparty'
 gem 'devise'

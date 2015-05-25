@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   resources :albums
   resources :artists
 
+  # root 'artists#index'
+
+  get 'search', to: 'search#search', as: "search"
+
+  # get 'dashboard' => 'artists#dashboard'
+  # get 'album_songs' => 'albums#album_songs'
+
   root 'artists#landing'
   get 'dashboard' => 'artists#dashboard'
   get 'album_songs' => 'albums#album_songs'
