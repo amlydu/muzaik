@@ -48,7 +48,7 @@ class Artist < ActiveRecord::Base
   end
 
   def related_artists_echo
-    response = HTTParty.get("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{URI.escape(self.name.squish)}")
+    response = HTTParty.get(URI.parse("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{URI.encode(self.name.squish)}"))
     body = JSON.parse response.body
     if body['response']['artists'] != nil #body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != []
       artists = body['response']['artists']
