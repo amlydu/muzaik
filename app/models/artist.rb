@@ -154,3 +154,6 @@ class Artist < ActiveRecord::Base
     end
   end
 end
+
+# Artist.import # for auto sync model with elastic search
+

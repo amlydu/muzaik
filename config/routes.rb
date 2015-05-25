@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'dashboard' => 'artists#dashboard'
   get 'album_songs' => 'albums#album_songs'
   get 'landing' => 'artists#landing'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
