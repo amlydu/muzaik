@@ -5,20 +5,18 @@ Rails.application.routes.draw do
   resources :albums
   resources :artists
 
-<<<<<<< HEAD
-  root 'artists#index'
+  # root 'artists#index'
 
   get 'search', to: 'search#search', as: "search"
 
-  get 'dashboard' => 'artists#dashboard'
-  get 'album_songs' => 'albums#album_songs'
+  # get 'dashboard' => 'artists#dashboard'
+  # get 'album_songs' => 'albums#album_songs'
 
-=======
   root 'artists#landing'
   get 'dashboard' => 'artists#dashboard'
   get 'album_songs' => 'albums#album_songs'
   get 'landing' => 'artists#landing'
->>>>>>> e49c82c68186e1d0cb73c9bff22e4f79c46193a5
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

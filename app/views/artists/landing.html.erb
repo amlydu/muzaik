@@ -15,7 +15,7 @@
     <div class="container">
     <!-- REPLACE WITH SEARCH -->
     <div style="height:231px;margin-top:80px" id="lga"></div>
-      <input id="search-field" placeholder="Type in Artist, Album, or Song" >
+      <%= render 'search/form' %>
     </div>
     <div class="search-btn">
       <%= link_to "Search Spindex", dashboard_path, :class => "btn" %>
