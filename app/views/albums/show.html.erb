@@ -15,7 +15,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @album.photo %>
+  <%= image_tag(@album.photo) %>
 </p>
 <% if current_user.try(:admin?) %>
   <%= link_to 'Edit', edit_album_path(@album) %> |
