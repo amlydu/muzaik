@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .
+//= require jquery.raty
+//= require ratyrate
 
 /*********************************************************************
 Content Information Toggling
