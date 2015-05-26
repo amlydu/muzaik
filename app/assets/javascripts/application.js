@@ -14,9 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.turbolinks
-//= require_tree .
 //= require jquery.raty
 //= require ratyrate
+//= require_tree .
+
 
 /*********************************************************************
 Content Information Toggling
