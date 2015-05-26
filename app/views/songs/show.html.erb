@@ -1,4 +1,17 @@
 <p>
+  <strong>Artist:</strong>
+  <%= @song.album.artist.name %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @song.album.name %>
+  <% if @song.album.photo %>
+    <%= image_tag(@song.album.photo) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @song.name %>
 </p>
@@ -6,14 +19,6 @@
 <% if current_user.try(:admin?) %>
   <%= link_to 'Edit', edit_song_path(@song) %> |
 <% end %>
-<%= link_to 'Back', songs_path %>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-var disqus_shortname = 'muzaik';
-(function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<%= link_to 'Back', songs_path %><br>
+
+<div class="fb-comments" data-href="http://localhost:3000/songs/<%= @song.id %>" data-numposts="5" data-colorscheme="light"></div>
