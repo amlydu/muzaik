@@ -17,9 +17,34 @@
 //= require_tree .
 
 
+
 /*********************************************************************
 Landing Page: Fade Out
 *********************************************************************/
+$(function(){
+   $('#click-search-button').click(function(e) {
+    e.preventDefault();
+    newLocation = this.href;
+   $('html').fadeOut(1400, newpage);
+   });
+   function newpage() {
+    window.location = newLocation;
+   }
+});
+
+// $(window).load(function(){
+//     $('html').fadeIn(4000);
+// })
+
+/*! Reloads page on every visit */
+function Reload() {
+  try {
+    var headElement = document.getElementsByTagName("head")[0];
+  if (headElement && headElement.innerHTML)
+  headElement.innerHTML += "<meta http-equiv=\"refresh\" content=\"1\">";
+  }
+  catch (e) {}
+}
 
 /*********************************************************************
 Content Information Toggling
@@ -37,8 +62,6 @@ $(function(){
 });
 
 $(function(){$('.accordion_content').hide();});
-
-
 
 
 
