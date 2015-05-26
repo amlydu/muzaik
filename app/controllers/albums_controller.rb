@@ -9,8 +9,9 @@ class AlbumsController < ApplicationController
   end
   # GET /albums
   # GET /albums.json
-    def index
-    end
+  def index
+    @albums = Album.all
+  end
 
   # GET /albums/1
   # GET /albums/1.json
