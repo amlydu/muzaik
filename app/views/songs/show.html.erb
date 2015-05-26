@@ -1,9 +1,27 @@
 <p>
+  <strong>Artist:</strong>
+  <%= @song.album.artist.name %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @song.album.name %>
+  <% if @song.album.photo %>
+    <%= image_tag(@song.album.photo) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @song.name %>
+</p>
+<p>
+  Rating: <%= rating_for @song, "overall", :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => true %>
 </p>
 
 <% if current_user.try(:admin?) %>
   <%= link_to 'Edit', edit_song_path(@song) %> |
 <% end %>
-<%= link_to 'Back', songs_path %>
+<%= link_to 'Back', songs_path %><br>
+
+<div class="fb-comments" data-href="http://localhost:3000/songs/<%= @song.id %>" data-numposts="5" data-colorscheme="light"></div>

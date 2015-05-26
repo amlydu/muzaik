@@ -1,4 +1,5 @@
 class Artist < ActiveRecord::Base
+  require 'uri'
   before_validation :format_name, :artist_echo_info, :related_artists_echo
   after_create  :get_musicbrainz_albums_and_ids,
                 :get_album_tracklist,
@@ -7,7 +8,7 @@ class Artist < ActiveRecord::Base
   validates :genre, length: { minimum: 1 }
   has_many :albums
   accepts_nested_attributes_for :albums
-  #songs we're seeing if this is inherited through albums
+  ratyrate_rateable "overall"
 
 ################ Search tutorial #############################
   searchable do
@@ -69,7 +70,7 @@ class Artist < ActiveRecord::Base
   end
 
   def related_artists_echo
-    response = HTTParty.get("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{self.name.squish.tr(" ","+")}")
+    response = HTTParty.get(URI.parse("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{URI.encode(self.name.squish)}"))
     body = JSON.parse response.body
     if body['response']['artists'] != nil #body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != []
       artists = body['response']['artists']
