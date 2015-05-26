@@ -29,7 +29,7 @@ class Artist < ActiveRecord::Base
     response = echno_nest_api.get_artist_info(self.name)
     body = JSON.parse response.body
     # The API returns obscure results. The following line will block invalid characters and results that don't contain related info.
-    if body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != []
+    if body['response']['status']['message'] == "Success" && body['response']['artists'] != [] && body['response']['artists'][0]['genres'] != [] 
       #The biography bucket returns mostly truncated results. The following code will return only full results.
       bios = body['response']['artists'][0]['biographies']
       full_bios = []
@@ -40,9 +40,9 @@ class Artist < ActiveRecord::Base
       end
       self.biography = full_bios[0]['text'] + "Source: " + full_bios[0]['url']
 
-      self.photo = body['response']['artists'][0]['images'][1]['url']
+      self.photo = body['response']['artists'][0]['images'][0]['url']
 
-      self.genre = body['response']['artists'][0]['genres'][1]['name'].capitalize
+      self.genre = body['response']['artists'][0]['genres'][0]['name'].capitalize
 
       self.hotttnesss = body['response']['artists'][0]['hotttnesss']
     end
