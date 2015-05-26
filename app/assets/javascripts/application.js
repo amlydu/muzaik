@@ -18,13 +18,35 @@
 //= require ratyrate
 //= require_tree .
 
+/*********************************************************************
+Landing Page: Fade Out
+*********************************************************************/
+$(function(){
+   $('#click-search-button').click(function(e) {
+    e.preventDefault();
+    newLocation = this.href;
+   $('html').fadeOut(1400, newpage);
+   });
+   function newpage() {
+    window.location = newLocation;
+   }
+});
+
+/*! Reloads page on every visit */
+function Reload() {
+  try {
+    var headElement = document.getElementsByTagName("head")[0];
+  if (headElement && headElement.innerHTML)
+  headElement.innerHTML += "<meta http-equiv=\"refresh\" content=\"1\">";
+  }
+  catch (e) {}
+}
 
 /*********************************************************************
 Content Information Toggling
 *********************************************************************/
 
 /* Album Songs */
-
 $(function(){
   $('.accordion h2').click(function() {
   $(this).toggleClass('active').find('i').toggleClass('fa-plus fa-minus')
@@ -36,6 +58,10 @@ $(function(){
 
 $(function(){$('.accordion_content').hide();});
 
+/*********************************************************************
+Facebook JS for Oauth
+*********************************************************************/
+
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -43,3 +69,16 @@ $(function(){$('.accordion_content').hide();});
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> fadeInLanding
