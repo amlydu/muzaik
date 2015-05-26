@@ -7,7 +7,9 @@
   <strong>Artist:</strong>
   <%= @album.artist.name %>
 </p>
-
+<p>
+  Rate me: <%= rating_for @album, "overall" %>
+</p>
 <p>
   <strong>Release date:</strong>
   <%= @album.release_date %>

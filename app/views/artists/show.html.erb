@@ -8,7 +8,9 @@
     <strong>Name:</strong>
     <%= @artist.name %>
   </p>
-
+  <p>
+    Rate me: <%= rating_for @artist, "overall" %>
+  </p>
   <p>
     <strong>Biography:</strong>
     <%= simple_format(@artist.biography) %>

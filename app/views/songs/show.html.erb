@@ -2,6 +2,9 @@
   <strong>Name:</strong>
   <%= @song.name %>
 </p>
+<p>
+  Rate me: <%= rating_for @song, "overall" %>
+</p>
 
 <% if current_user.try(:admin?) %>
   <%= link_to 'Edit', edit_song_path(@song) %> |
