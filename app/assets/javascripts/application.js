@@ -12,13 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.turbolinks
 //= require jquery.raty
 //= require ratyrate
 //= require_tree .
 
-var ready = (function() {
+var ready = function() {
 
 /*********************************************************************
 Landing Page: Fade Out
@@ -72,7 +71,9 @@ Landing Page: Fade Out
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-});
-$(ready);
+};
+$(document).ready(ready);
 $(document).on('page:load', ready);
+
+//=require turbolinks
 
