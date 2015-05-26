@@ -1,4 +1,17 @@
 <p>
+  <strong>Artist:</strong>
+  <%= @song.album.artist.name %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @song.album.name %>
+  <% if @song.album.photo %>
+    <%= image_tag(@song.album.photo) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @song.name %>
 </p>
