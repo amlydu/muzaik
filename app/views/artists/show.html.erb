@@ -28,13 +28,19 @@
   <p>
     <strong>Related Artists:</strong>
     <% arr = @artist.related_artist.split(", ") %>
-    <% arr.each do |art| %>
+    <% arr[0..3].each do |art| %>
     <% name = art.split.map(&:capitalize).join(' ') %>
       <% if Artist.exists?(name: name) %>
-        <%= link_to art, artist_path(Artist.find_by(name: name)) %>
+        <%= link_to art + ",", artist_path(Artist.find_by(name: name)) %>
       <% else %>
-        <%= p name %>
+        <%= p name + "," %>
       <% end %>
+    <% end %>
+    <% name = arr[4].split.map(&:capitalize).join(' ') %>
+    <% if Artist.exists?(name: arr[4]) %>
+      <%= link_to art, artist_path(Artist.find_by(name: arr[4])) %>
+    <% else %>
+      <%= p arr[4] %>
     <% end %>
   </p>
   <% if current_user.try(:admin?) %>
