@@ -4,6 +4,6 @@ class Album < ActiveRecord::Base
   has_many :ratings
   has_many :users, through: :ratings
   accepts_nested_attributes_for :songs
-  ratyrate_rateable "speed"
+  ratyrate_rateable "overall"
 
 end

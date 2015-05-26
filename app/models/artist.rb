@@ -8,7 +8,7 @@ class Artist < ActiveRecord::Base
   validates :genre, length: { minimum: 1 }
   has_many :albums
   accepts_nested_attributes_for :albums
-  ratyrate_rateable "speed"
+  ratyrate_rateable "overall"
 
   def format_name
     self.name = self.name.split.map(&:capitalize).join(' ')
