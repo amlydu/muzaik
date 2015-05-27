@@ -25,12 +25,18 @@
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
           <div class="actions">
-            <%= f.submit "Sign up", :class => "btn btn-small btn-success" %>
+            <ul>
+              <li>
+                <%= f.submit "Sign up", :class => "btn" %>
+              </li>
+              <li>
+                <a herf="#" id="cancel-sign-up" data-dismiss="modal">Cancel</a>
+              </li>
+            </ul>
           </div>
         <% end %>
       </div>
       <div class="modal-footer">
-        <p><a href="#" class="btn btn-small" data-dismiss="modal">Close</a></p>
         <%= render "devise/shared/links" %>
       </div>
     </div>

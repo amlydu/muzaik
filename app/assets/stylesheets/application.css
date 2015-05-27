@@ -29,6 +29,9 @@ nav ul {
 nav ul li {
   display: inline-block;
 }
+nav ul li a {
+  color: white;
+}
 img {
   height: 250px;
 }
@@ -108,7 +111,19 @@ Modal Styling
 .modal-header {
   /*background-color: #C0C0C0;*/
 }
-
+#shared-links,
+.actions ul {
+  list-style: none;
+  padding: 0;
+}
+#shared-links li,
+.actions ul li {
+  display: inline-block;
+}
+.actions ul li a {
+  cursor: pointer;
+  text-decoration: none;
+}
 
 /************************************************************************************
 Media Queries
