@@ -1,7 +1,8 @@
 Rails.application.configure do
 
-  config.action_mailer.default_url_options = { host: 'tranquil-earth-1333.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'fast-thicket-1832.herokuapp.com' }
   # Settings specified here will take precedence over those in config/application.rb.
+  Sunspot.config.solr.url = ENV['https://index.websolr.com/solr/c07bda7a643'] #search stuff
 
   # Code is not reloaded between requests.
   config.cache_classes = true

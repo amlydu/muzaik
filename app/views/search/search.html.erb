@@ -24,7 +24,7 @@
   <% end %>
 <% end %>
 
-<% if !(@artists.any?) && !(@albums.any?) %>
+<% if (@artists.empty?) && (@albums.empty?) %> <!--how to type in nothing and this comes up -->
 <h2> Can't find what you're looking for?</h2>
 <%= render "general/adminArtists" %>
 <% end %>
