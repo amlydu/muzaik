@@ -10,6 +10,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript"> $(function ()
+
+{ $("#edit_profile").modal({show:false }); </script>
 </head>
   <!-- FLASH ALERTS - integrate?-->
   <%# flash.each do |name, msg| %>
@@ -17,7 +20,9 @@
   <%# end %>
 
 <body>
+
   <div id="wrapper">
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -50,23 +55,6 @@
           <li class="<%= is_active?(songs_path) %>">
             <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Songs'.html_safe, songs_path %>
           </li>
-          <li>
-            <a href="#"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements Ref</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid Ref</a>
-          </li>
-          <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown Example<i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -93,7 +81,8 @@
     </div>
     <!-- /#page-wrapper -->
   </div>
-
+  <%= render "devise/registrations/edit" %>
+  <%= render "devise/registrations/new" %>
   <%= javascript_include_tag 'bootstrap.min' %>
 </body>
 </html>
