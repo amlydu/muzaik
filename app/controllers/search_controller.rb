@@ -1,5 +1,10 @@
 class SearchController < ApplicationController
   def search #put it in its own controller so we aren't searching only one thing
+    if params[:search].strip.empty?
+      @artists = []
+      @albums = []
+      return
+    end
     @artist_search = Sunspot.search [Artist] do #use Sunspot search on [artists]
       fulltext params[:search] #look through the full text by :searching
     end
