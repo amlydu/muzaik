@@ -109,7 +109,9 @@ Search Form Styling
 Modal Styling
 ************************************************************************************/
 .modal-header {
-  /*background-color: #C0C0C0;*/
+  background-color: gray;
+  border-radius: 4px 4px 0 0;
+  color: white;
 }
 #shared-links,
 .actions ul {
