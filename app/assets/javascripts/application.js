@@ -60,7 +60,7 @@ Landing Page: Fade Out
   $(function(){$('.accordion_content').hide();});
 
   /*********************************************************************
-  Facebook JS for Oauth
+  Facebook JS
   *********************************************************************/
 
   (function(d, s, id) {
@@ -70,6 +70,22 @@ Landing Page: Fade Out
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+  /*********************************************************************
+  Twitter JS
+  *********************************************************************/
+
+  !function(d,s,id) {
+    var js,fjs=d.getElementsByTagName(s)[0],
+    p=/^http:/.test(d.location)?'http':'https';
+      if(!d.getElementById(id)) {
+        js=d.createElement(s);
+        js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }
+  (document,"script","twitter-wjs");
+
 
 };
 $(document).ready(ready);
