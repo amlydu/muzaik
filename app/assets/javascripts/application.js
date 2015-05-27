@@ -26,6 +26,7 @@ Landing Page: Fade Out
      $('#click-search-button').click(function(e) {
       e.preventDefault();
       newLocation = this.href;
+      console.log(newLocation);
      $('html').fadeOut(1400, newpage);
      });
      function newpage() {
