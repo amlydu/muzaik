@@ -18,3 +18,4 @@
 /solr/data
 /solr/development/data
 /solr/pids
+/solr/development/data/index/segments.gen
