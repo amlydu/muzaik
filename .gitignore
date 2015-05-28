@@ -15,6 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
-/solr/data
-/solr/development/data
-/solr/pids
+solr/data
+solr/test
+solr/development
+solr/default/data
+solr/pids
