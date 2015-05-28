@@ -21,7 +21,7 @@
     <%= image_tag(@artist.photo)%>
   </p>
 
-  <a class="twitter-timeline" href="https://twitter.com/<%= @artist.name.tr(" ","") %>" data-widget-id="603378251269038080" data-screen-name="<%= @artist.name.tr(" ","") %>">Tweets by @<% @artist.name %></a>
+  <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
 
   <p>
     <strong>Genre:</strong>

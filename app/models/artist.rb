@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
   require 'uri'
-  before_validation :format_name, :artist_echo_info, :related_artists_echo
+  before_validation :format_name, :artist_echo_info, :related_artists_echo, :twitter_echo
   after_create  :get_musicbrainz_albums_and_ids,
                 :get_album_tracklist,
                 :get_album_cover
@@ -81,6 +81,12 @@ class Artist < ActiveRecord::Base
       end
       self.related_artist = related_artists + artists[4]['name']
     end
+  end
+
+  def twitter_echo
+    response = HTTParty.get(URI.parse("http://developer.echonest.com/api/v4/artist/twitter?api_key=WITDBGZPPHKHUCPLK&name=#{URI.encode(self.name.squish)}&format=json"))
+    body = JSON.parse response.body
+    self.twitter = body['response']['artist']['twitter']
   end
 
   def get_musicbrainz_albums_and_ids
