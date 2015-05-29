@@ -4,49 +4,64 @@
     I'm sorry, we couldn't find that artist. Maybe a different spelling will do the trick...
   </p>
 <% else %>
-  <p>
-    <strong>Name:</strong>
-    <%= @artist.name %>
-  </p>
-  <p>
-    Rating: <%= rating_for @artist, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => true %>
-  </p>
-  <p>
-    <strong>Biography:</strong>
-    <%= simple_format(@artist.biography) %>
-  </p>
-
-  <p>
-    <strong>Photo:</strong>
-    <%= image_tag(@artist.photo)%>
-  </p>
-  
-  <% if @artist.twitter %>
-    <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
-  <% end %>
-
-  <p>
-    <strong>Genre:</strong>
-    <%= @artist.genre %>
-  </p>
-  <p>
-    <strong>Related Artists:</strong>
-    <% arr = @artist.related_artist.split(", ") %>
-    <% arr[0..3].each do |art| %>
-    <% name = art.split.map(&:capitalize).join(' ') %>
-      <% if Artist.exists?(name: name) %>
-        <%= link_to art + ",", artist_path(Artist.find_by(name: name)) %>
-      <% else %>
-        <%= p name + "," %>
-      <% end %>
-    <% end %>
-    <% name = arr[4].split.map(&:capitalize).join(' ') %>
-    <% if Artist.exists?(name: arr[4]) %>
-      <%= link_to art, artist_path(Artist.find_by(name: arr[4])) %>
-    <% else %>
-      <%= p arr[4] %>
-    <% end %>
-  </p>
+<div class="wrapper">
+  <div>
+    <div class="artist-name">
+      <h1><%= @artist.name %>
+      </h1>
+      <p>
+        Rating: <%= rating_for @artist, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => true %>
+      </p>
+      <div class="col-md-4">
+        <h2>Genre</h2>
+        <p><%= @artist.genre %></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Related Artists</h2>
+        <% arr = @artist.related_artist.split(", ") %>
+        <% arr.each do |art| %>
+          <% name = art.split.map(&:capitalize).join(' ') %>
+          <% if Artist.exists?(name: name) %>
+            <%= link_to art, artist_path(Artist.find_by(name: name)) %>
+          <% else %>
+            <%= p name %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <h2>Hotness</h2>
+        <p><%= @artist.hotttnesss %></p>
+      </div>
+    </div>
+  </div>
+</dix>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseOne">
+          Biography
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <%= image_tag((@artist.photo), :class => "artist-image") %>
+        <%= simple_format(@artist.biography) %>
+      </div>
+    </div>
+  </div>
+</div>
+<% if @artist.twitter %>
+<button type="button" class="btn btn-primary" data-toggle="collapse" 
+   data-target="#demo">
+   Tweets
+</button>
+  <div id="demo" class="collapse in">
+        <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader nofooter" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
+  </div>
+ <% end %>
   <% if current_user.try(:admin?) %>
     <%= link_to 'Edit', edit_artist_path(@artist) %> |
   <% end %>
