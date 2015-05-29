@@ -20,8 +20,10 @@
     <strong>Photo:</strong>
     <%= image_tag(@artist.photo)%>
   </p>
-
-  <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
+  
+  <% if @artist.twitter %>
+    <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
+  <% end %>
 
   <p>
     <strong>Genre:</strong>
