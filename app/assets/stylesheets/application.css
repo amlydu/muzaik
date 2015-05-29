@@ -21,6 +21,7 @@
 * {
   margin: 0;
   padding-top: 0;
+  box-sizing: border-box;
 }
 nav ul {
   list-style: none;
@@ -50,9 +51,43 @@ div.star img {
   height: 15px;
 }
 
+#login {
+  margin: 0 0 0 auto;
+}
+
+.col-md-2 {
+  padding-left: 0;
+}
+
+
+
 /************************************************************************************
 Artist Styling
 ************************************************************************************/
+
+.artist-image {
+  float: left;
+  padding: 0 1em 1em 0;
+}
+.admin-links {
+  font-size: .5em;
+}
+.admin-links span {
+  text-align: right;
+}
+.artist-name h1 {
+  font-weight: bolder;
+  font-size: 4em;
+  font-variant: small-caps;
+}
+
+/************************************************************************************
+Twitter Styling
+************************************************************************************/
+
+.twitter-timeline { 
+      width: 100% !important; 
+    }
 
 /************************************************************************************
 Albums Styling
@@ -104,6 +139,20 @@ Devise Form Styling
 /************************************************************************************
 Search Form Styling
 ************************************************************************************/
+
+#search {
+padding: 7px 0;
+}
+.search-field {
+  display: inline;
+  width: 60%;`
+}
+
+.search-btn {
+  display: inline-block;
+/*  float: right;*/
+/*  width: 40%;*/
+}
 
 /************************************************************************************
 Modal Styling

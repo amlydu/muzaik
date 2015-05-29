@@ -1,26 +1,48 @@
 <!-- Put all shared Artists links here to render if ther person signed in is an admin -->
 <% if current_user.try(:admin?) %>
-  <% @artists.each do |artist| %>
-    <tr>
-      <td><%= artist.name %></td>
-      <td><%= simple_format(artist.biography) %></td>
-      <td><%= image_tag(artist.photo) %></td>
-      <td><%= artist.genre %></td>
-      <% arr = artist.related_artist.split(", ") %>
-      <% arr.each do |art| %>
-      <% name = art.split.map(&:capitalize).join(' ') %>
-        <% if Artist.exists?(name: name) %>
-          <td><%= link_to art, artist_path(Artist.find_by(name: name)) %></td>
-        <% else %>
-          <td><%= p name %></td>
-        <% end %>
-      <% end %>
-      <td><%= link_to 'Show', artist %></td>
-      <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-      <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
   <%= link_to 'New Artist', new_artist_path %>
+  <% @artists.each do |artist| %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row artist-name">
+      <h1><%= artist.name %>
+        <span class="admin-links">
+          <%= link_to 'Show ', artist %>
+          <%= link_to 'Edit ', edit_artist_path(artist) %>
+          <%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+      </h1>
+      <div class="col-md-4">
+        <h2>Genre</h2>
+        <p><%= artist.genre %></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Related Artists</h2>
+        <% arr = artist.related_artist.split(", ") %>
+        <% arr.each do |art| %>
+          <% name = art.split.map(&:capitalize).join(' ') %>
+          <% if Artist.exists?(name: name) %>
+            <%= link_to art, artist_path(Artist.find_by(name: name)) %>
+          <% else %>
+            <%= p name %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <h2>Hotness</h2>
+        <p><%= artist.hotttnesss %></p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h2>Biography</h2>
+      <%= image_tag((artist.photo), :class => "artist-image") %>
+      <%= simple_format(artist.biography) %>
+    </div>
+  </div>
+</div>
+<% end %>
 <% else %>
   <% @artists.each do |artist| %>
     <tr>
