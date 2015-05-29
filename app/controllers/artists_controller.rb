@@ -34,6 +34,9 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    @artist.artist_echo_info 
+    @artist.related_artists_echo
+    @artist.twitter_echo
 
     respond_to do |format|
       if @artist.save

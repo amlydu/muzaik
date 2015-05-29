@@ -1,6 +1,7 @@
 class Artist < ActiveRecord::Base
   require 'uri'
-  before_validation :format_name, :artist_echo_info, :related_artists_echo, :twitter_echo
+  # Before validation prevents the same artist being entered twice with different capitalization.
+  before_validation :format_name
   after_create  :get_musicbrainz_albums_and_ids,
                 :get_album_tracklist,
                 :get_album_cover
