@@ -133,7 +133,9 @@ class Artist < ActiveRecord::Base
   def twitter_echo
     response = HTTParty.get(URI.parse("http://developer.echonest.com/api/v4/artist/twitter?api_key=WITDBGZPPHKHUCPLK&name=#{URI.encode(self.name.squish)}&format=json"))
     body = JSON.parse response.body
-    self.twitter = body['response']['artist']['twitter']
+    if body['response']['artist'] != nil
+      self.twitter = body['response']['artist']['twitter']
+    end
   end
 
   def get_musicbrainz_albums_and_ids

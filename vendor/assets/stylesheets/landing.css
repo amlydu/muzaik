@@ -53,3 +53,7 @@ div#lga {
     position: fixed;
   }
 }
+
+.notice h3 {
+  text-align: center;
+}
