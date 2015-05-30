@@ -67,9 +67,11 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse in">
       <div class="panel-body">
-        <% pictures = @artist.picture.split("\", \"")[1..13] %>
-        <% pictures.each do |pic| %>
-          <%= image_tag(pic) %>
+        <% if @artist.picture %>
+          <% pictures = @artist.picture.split("\", \"")[1..13] %>
+          <% pictures.each do |pic| %>
+            <%= image_tag(pic) %>
+          <% end %>
         <% end %>
       </div>
     </div>
