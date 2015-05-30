@@ -113,6 +113,7 @@ class Artist < ActiveRecord::Base
       self.picture = pictures
     end
   end
+  #handle_asynchronously :artist_echo_info
 
   def related_artists_echo
     response = HTTParty.get(URI.parse("http://developer.echonest.com/api/v4/artist/similar?api_key=WITDBGZPPHKHUCPLK&name=#{URI.encode(self.name.squish)}"))
@@ -127,6 +128,7 @@ class Artist < ActiveRecord::Base
       self.related_artist = related_artists + artists[4]['name']
     end
   end
+  #handle_asynchronously :related_artists_echo
 
   def twitter_echo
     response = HTTParty.get(URI.parse("http://developer.echonest.com/api/v4/artist/twitter?api_key=WITDBGZPPHKHUCPLK&name=#{URI.encode(self.name.squish)}&format=json"))
@@ -168,6 +170,7 @@ class Artist < ActiveRecord::Base
       self.albums.create(name: key, external_album_id: val)
     end
   end
+  handle_asynchronously :get_musicbrainz_albums_and_ids
 
  # assign external_album_ids to albums
  #  iterate through albums, running Nokogiri to get tracklist for each album and save it. \
@@ -186,6 +189,7 @@ class Artist < ActiveRecord::Base
       end
     end
   end
+  handle_asynchronously :get_album_tracklist
 
   def get_album_cover
     self.albums.find_each do |album|
@@ -200,6 +204,7 @@ class Artist < ActiveRecord::Base
       end
     end
   end
+  handle_asynchronously :get_album_cover
 
   def destroy_songs
     self.albums.each do |album|

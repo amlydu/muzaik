@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'delayed_job_active_record'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'nokogiri'
