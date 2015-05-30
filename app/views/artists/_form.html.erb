@@ -3,10 +3,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">This Artist doesn't exist in our database yet!</h4>
+        <h1 class="modal-title">Add to the Muzaik Family</h1>
       </div>
       <div class="modal-body">
-        <h2>Would you like to create the artist in our database?</h2>
+        <h3 class>This artist is not currently in the Muzaik database!</h3>
           <%= form_for(@artist) do |f| %>
             <% if @artist.errors.any? %>
               <div id="error_explanation">
@@ -19,15 +19,19 @@
             <% end %>
           <% end %>
         <div class="field">
-          <h1><%= f.label :name, value: params[:search] %></h1>
+          <h2 class="text-center">
+            <%= f.label :name, value: params[:search] %><br />
+          </h2>
+          <br />
           <%= f.hidden_field :name, value: params[:search] %>
         </div>
+        <h4>Create the artist with a click of the button to add them to Muzaik!</h4>
       </div>
       <div class="modal-footer">
         <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-          Create! Artist!
+          Create Artist!
         <% end %>
-        <button type="button" class="btn" data-dismiss="modal">Close</button>
+        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
       </div>
       <% end %>
     </div><!-- /.modal-content -->

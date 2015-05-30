@@ -84,8 +84,8 @@ Artist Styling
 Twitter Styling
 ************************************************************************************/
 
-.twitter-timeline { 
-      width: 100% !important; 
+.twitter-timeline {
+      width: 100% !important;
     }
 
 /************************************************************************************
@@ -146,11 +146,8 @@ padding: 7px 0;
   display: inline;
   width: 60%;`
 }
-
 .search-btn {
   display: inline-block;
-/*  float: right;*/
-/*  width: 40%;*/
 }
 
 /************************************************************************************
