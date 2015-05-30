@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527183624) do
+ActiveRecord::Schema.define(version: 20150530151749) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150527183624) do
     t.string   "related_artist"
     t.float    "hotttnesss"
     t.string   "twitter"
+    t.string   "picture"
   end
 
   create_table "average_caches", force: :cascade do |t|

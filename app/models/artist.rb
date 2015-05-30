@@ -100,6 +100,17 @@ class Artist < ActiveRecord::Base
       self.genre = body['response']['artists'][0]['genres'][0]['name'].capitalize
 
       self.hotttnesss = body['response']['artists'][0]['hotttnesss']
+
+      picture = body['response']['artists'][0]['images']
+      pictures = []
+      i = 0
+
+      15.times do
+        pictures << picture[i]['url']
+        i += 1
+      end
+
+      self.picture = pictures
     end
   end
 
