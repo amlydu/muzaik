@@ -19,17 +19,14 @@
 <% end %>
 
 <% if (@artists.empty?) && (@albums.empty?) %> <!--how to type in nothing and this comes up -->
-<script type="text/javascript">
-$(window).load(function(){
-    $('#create-artist').modal('show');
-});
-</script>
-<h2> This artist doesn't exist in our database -- would you like to create their page?</h2>
-<%= render "artists/form" %>
+  <script type="text/javascript">
+  $(window).load(function(){
+      $('#create-artist').modal('show');
+  });
+  </script>
+  <h2> You've discovered an Artist that does not exist in our database! </h2>
+  <%= render "artists/form" %>
+<% end %>
 
-<%= render "search/createArtist" %>
-
-  <% end %>
-<!-- Left off where I need to create a modal/popupup when the above result it returned and they click create/ok on a hidden field to send this information in -->
 
 
