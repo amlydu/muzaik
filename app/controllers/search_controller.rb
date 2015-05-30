@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def search #put it in its own controller so we aren't searching only one thing
+    @artist = Artist.new
     if params[:search].strip.empty?
       @artists = []
       @albums = []

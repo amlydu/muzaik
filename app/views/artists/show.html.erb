@@ -40,7 +40,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" 
+        <a data-toggle="collapse" data-parent="#accordion"
           href="#collapseOne">
           Biography
         </a>
@@ -62,7 +62,7 @@
 </div>
 
 <% if @artist.twitter %>
-<button type="button" class="btn btn-primary" data-toggle="collapse" 
+<button type="button" class="btn btn-primary" data-toggle="collapse"
    data-target="#demo">
    Tweets
 </button>
@@ -73,8 +73,8 @@
 
 <div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light"></div>
 
-  <% if current_user.try(:admin?) %>
-    <%= link_to 'Edit', edit_artist_path(@artist) %> |
-  <% end %>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Edit', edit_artist_path(@artist) %> |
+<% end %>
   <%= link_to 'Back', artists_path %><br>
 <% end %>
