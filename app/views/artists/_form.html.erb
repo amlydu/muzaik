@@ -12,20 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :biography %><br>
-    <%= f.text_area :biography %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.text_field :photo %>
-  </div>
-  <div class="field">
-    <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
+    <h1><%= f.label :name, value: params[:search] %></h1>
+    <%= f.hidden_field :name, value: params[:search] %>
   </div>
   <div class="actions">
     <%= f.submit %>
