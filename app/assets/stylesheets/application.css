@@ -53,8 +53,8 @@ ul.nav.navbar-nav.side-nav {
 }
 ul.nav.navbar-nav.side-nav li,
 ul.nav.navbar-nav.side-nav a {
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
+  margin: 2.5em 1em 2.5em 3em;
 }
 ul.nav.navbar-nav.side-nav a {
   height: 75px;
@@ -83,8 +83,11 @@ div.star img {
   text-align: center;
 }
 .fa {
-  font-size: 2em;
+  font-size: 1.6em;
+  display: inline-block;
+  cursor: pointer;
 }
+
 /************************************************************************************
 Artist Styling
 ************************************************************************************/
@@ -203,7 +206,7 @@ div#shruggie {
   font-size: 5em;
   text-align: center;
   margin-top: 50px;
-
+}
 
 /************************************************************************************
 Modal Styling
