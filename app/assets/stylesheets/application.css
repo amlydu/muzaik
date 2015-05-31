@@ -46,19 +46,30 @@ input {
   color: black;
 }
 
+/* Left-Navbar Styling*/
+ul.nav.navbar-nav.side-nav {
+  display: table-row;
+}
+ul.nav.navbar-nav.side-nav li,
+ul.nav.navbar-nav.side-nav a {
+  display: table-cell;
+  vertical-align: middle;
+}
+ul.nav.navbar-nav.side-nav a {
+  height: 75px;
+  font-size: 1.3em;
+}
+
 /*Star Rating Size*/
 div.star img {
   height: 15px;
 }
-
 #login {
   margin: 0 0 0 auto;
 }
-
 .col-md-2 {
   padding-left: 0;
 }
-
 .notice h3 {
   text-align: center;
 }
@@ -152,6 +163,12 @@ padding: 7px 0;
 .search-btn {
   display: inline-block;
 }
+div#shruggie {
+  height: 150px;
+  font-size: 5em;
+  text-align: center;
+  margin-top: 50px;
+
 
 /************************************************************************************
 Modal Styling
