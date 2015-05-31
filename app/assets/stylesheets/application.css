@@ -51,15 +51,11 @@ input {
 ul.nav.navbar-nav.side-nav {
   display: table-row;
 }
-ul.nav.navbar-nav.side-nav li,
-ul.nav.navbar-nav.side-nav a {
+ul.nav.navbar-nav.side-nav li {
   display: block;
   margin: 2.5em 1em 2.5em 3em;
 }
-ul.nav.navbar-nav.side-nav a {
-  height: 75px;
-  font-size: 1.3em;
-}
+
 #sign-up-p {
   margin: 0;
   color: #9d9d9d;
@@ -86,6 +82,19 @@ div.star img {
   font-size: 1.6em;
   display: inline-block;
   cursor: pointer;
+}
+
+a:link {
+    color: grey;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+i {
+  color: grey;
 }
 
 /************************************************************************************
