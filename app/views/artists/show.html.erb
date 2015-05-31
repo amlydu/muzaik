@@ -4,6 +4,27 @@
   </p>
 <% else %>
 
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <!-- CHANGE DASHBOARD URL/BASE!!-->
+    <li id="bio-btn">
+      <i class="fa  fa-arrow-circle-o-right">Biography</i>
+    </li>
+    <li id="pics-btn">
+      <i class="fa  fa-arrow-circle-o-right">Pictures</i>
+    </li>
+    <li id="YT-btn">
+      <i class="fa  fa-arrow-circle-o-right">Video</i>
+    </li>
+    <li id="twitter-btn">
+      <i class="fa  fa-arrow-circle-o-right">Twitter</i>
+    </li>
+        <li id="FB-comments-btn">
+      <i class="fa  fa-arrow-circle-o-right">Discussion</i>
+    </li>
+  </ul>
+</div>
+
 <div class="wrapper">
   <div>
     <div class="artist-name">
@@ -36,65 +57,41 @@
   </div>
 </dix>
 
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion"
-          href="#collapseOne">
-          Biography
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <%= image_tag((@artist.photo), :class => "artist-image") %>
-        <%= simple_format(@artist.biography) %>
-      </div>
-    </div>
-  </div>
+<div id="bio">
+  <%= image_tag((@artist.photo), :class => "artist-image") %>
+  <%= simple_format(@artist.biography) %>
 </div>
 
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion"
-          href="#collapseTwo">
-          Pictures
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <% if @artist.picture %>
-          <% pictures = @artist.picture.split("\", \"")[1..13] %>
-          <% pictures.each do |pic| %>
-            <%= image_tag(pic) %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div id="pics">
+  <% if @artist.picture %>
+    <% pictures = @artist.picture.split("\", \"")[1..13] %>
+    <% pictures.each do |pic| %>
+      <%= image_tag(pic) %>
+    <% end %>
+  <% end %>
 </div>
 
-<div id="youtube">
+<div id="YT">
   <iframe id="ytplayer" type="text/html" width="640" height="390"
   src="https://www.youtube.com/embed?listType=search&list=<%= @artist.name %>"
   frameborder="0"/></iframe>
 </div>
 
 <% if @artist.twitter %>
-<button type="button" class="btn btn-primary" data-toggle="collapse"
+<div id="twitter">
+  <div id="demo" class="collapse in">
+    <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader nofooter" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
+  </div>
+</div>
+<!-- <button type="button" class="btn btn-primary" data-toggle="collapse"
    data-target="#demo">
    Tweets
-</button>
-  <div id="demo" class="collapse in">
-        <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader nofooter" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
-  </div>
+</button> -->
 <% end %>
 
-<div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light"></div>
+<div id="FB-comments">
+  <div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light"></div>
+</div>
 
 <% if current_user.try(:admin?) %>
   <%= link_to 'Edit', edit_artist_path(@artist) %> |

@@ -83,6 +83,26 @@ Artist Styling
   font-variant: small-caps;
 }
 
+/*#bio {
+  display: none;
+}*/
+
+#pics {
+  display: none;
+}
+
+#YT {
+  display: none;
+}
+
+#twitter {
+  display: none;
+}
+
+#FB-comments {
+  display: none;
+}
+
 /************************************************************************************
 Twitter Styling
 ************************************************************************************/

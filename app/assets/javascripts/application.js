@@ -87,6 +87,29 @@ Twitter JS
     }
   (document,"script","twitter-wjs");
 
+/*********************************************************************
+Side Nav JS
+*********************************************************************/
+
+  $('#bio-btn').click(function(){
+    $('#bio').toggle('display');
+  });
+
+  $('#pics-btn').click(function(){
+    $('#pics').toggle('display');
+  });
+
+  $('#YT-btn').click(function(){
+    $('#YT').toggle('display');
+  });
+
+  $('#twitter-btn').click(function(){
+    $('#twitter').toggle('display');
+  });
+
+  $('#FB-comments-btn').click(function(){
+    $('#FB-comments').toggle('display');
+  });
 
 };
 $(document).ready(ready);

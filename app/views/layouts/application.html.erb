@@ -39,23 +39,7 @@
         <%= render "artists/login" %>
       </div>
       <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-          <!-- CHANGE DASHBOARD URL/BASE!!-->
-          <li class="<%= is_active?(dashboard_path) %>">
-            <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Dashboard'.html_safe, dashboard_path %>
-          </li>
-          <li class="<%= is_active?(artists_path) %>">
-            <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Artists'.html_safe, artists_path %>
-          </li>
-          <li class="<%= is_active?(albums_path) %>">
-            <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Albums'.html_safe, albums_path %>
-          </li>
-          <li class="<%= is_active?(songs_path) %>">
-            <%= link_to '<i class="fa  fa-arrow-circle-o-right"></i> Songs'.html_safe, songs_path %>
-          </li>
-        </ul>
-      </div>
+
       <!-- /.navbar-collapse -->
     </nav>
 
