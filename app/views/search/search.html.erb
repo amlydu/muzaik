@@ -1,4 +1,4 @@
-<h1>Search Results</h1>
+<h1 class ="text-center">Search Results</h1>
 <% if @artists.any? %>
   <ul>
     <% @artists.each do |artist| %>
@@ -23,7 +23,15 @@
       $('#create-artist').modal('show');
   });
   </script>
-  <h2> You've discovered an Artist that does not exist in our database! </h2>
+  <div>
+    <div id ="shruggie">
+      <br />
+      <br />
+      <br />
+      ¯\_(ツ)_/¯
+    </div>
+  </div>
+
   <%= render "artists/form" %>
 <% end %>
 
