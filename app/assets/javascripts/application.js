@@ -95,6 +95,10 @@ Side Nav JS
     $('#bio').toggle('display');
   });
 
+  $('#albums-btn').click(function(){
+    $('#albums').toggle('display');
+  });
+
   $('#pics-btn').click(function(){
     $('#pics').toggle('display');
   });
@@ -109,7 +113,7 @@ Side Nav JS
 
   $('#FB-comments-btn').click(function(){
     $('#FB-comments').toggle('display');
-  });
+  });  
 
 };
 $(document).ready(ready);
