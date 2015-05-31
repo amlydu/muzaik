@@ -171,6 +171,9 @@ padding: 7px 0;
 .search-btn {
   display: inline-block;
 }
+input#search {
+  padding-left: 12px;
+}
 div#shruggie {
   height: 150px;
   font-size: 5em;
