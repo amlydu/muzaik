@@ -26,9 +26,12 @@
 
 @font-face {
     font-family: 'Alfa';
-    src: url("AlfaSlabOne-Regular.ttf");
+    src: url("/assets/fonts/AlfaSlabOne-Regular.ttf");
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Alfa';
+}
 .nav-logo{
   width: 135px;
   margin-top: -50%;
@@ -248,6 +251,10 @@ Artist Styling
   margin: 1em 0;
   text-align: center;
   list-style-position: inside;
+}
+
+#landing-logo{
+  font-family:
 }
 
 #pics {
