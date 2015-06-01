@@ -10,7 +10,7 @@
               <div class="thumbnail">
                 <%= link_to image_tag(artist.photo), artist_path(artist), :class => "artist-img-size" %>
                 <div class="caption">
-                  <h2 style="text-decoration: underline">Matching Artist</h2>
+                  <h2 style="text-decoration: underline; font-variant: small-caps">Matching Artist</h2>
                   <h3 class="text-center"><%= link_to artist.name, artist_path(artist) %></h3>
                 </div>
               </div>
@@ -23,7 +23,7 @@
               <div class="thumbnail">
                 <%= link_to image_tag(album.photo), album_path(album), :class => "artist-img-size" %>
                 <div class="caption">
-                  <h2 style="text-decoration: underline">Matching Album</h2>
+                  <h2 style="text-decoration: underline; font-variant: small-caps">Matching Album</h2>
                   <h3 class="text-center"><%= link_to album.name, artist_path(album.artist.id) %></h3>
                 </div>
               </div>
