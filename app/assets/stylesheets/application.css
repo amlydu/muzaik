@@ -169,6 +169,9 @@ div.star img {
   display: inline-block;
   cursor: pointer;
 }
+.raty-cancel {
+  display: none;
+}
 
 a:hover {
   color: white;
