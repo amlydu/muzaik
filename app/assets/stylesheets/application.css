@@ -309,7 +309,6 @@ padding: 7px 0;
   width: 33%;
   margin-right: 8em;
 }
-
 .album-results h1,
 .album-results h3 {
   text-align: center;
@@ -330,7 +329,9 @@ article.artist-results.col-md-4 img {
 .text-center {
   margin-top: 2em;
 }
-
+.search-top h1 {
+  margin-top: 0;
+}
 .search-field {
   display: inline;
   width: 60%;`
