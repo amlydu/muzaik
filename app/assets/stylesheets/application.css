@@ -23,6 +23,72 @@
   padding-top: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Alfa';
+    src: url("AlfaSlabOne-Regular.ttf");
+}
+
+#logo{
+  font-family: 'Alfa';
+  color:white;
+}
+
+/* SLIDER */
+
+#slide-container{
+    overflow: hidden;
+    height: 600px;
+    margin-right: 20%;
+    margin-top: -4%;
+}
+
+.carousel-control{
+    width: 63px;
+    background: black;
+    height: 600px;
+}
+.carousel > div:not(.active){
+    display: none;
+}
+.prev{
+  margin-left: -30%;
+}
+.next{
+  margin-right: -40%;
+  margin-top: -41%;
+}
+
+.carousel{
+    width: 80%;
+    margin-top: -20%;
+    margin-right: -18%;
+}
+#circles {
+  list-style:none;
+}
+#circles li {
+    display:inline-block;
+    border-radius:15px;
+    width:15px;
+    height:15px;
+    margin: 0 0 10px 10px;
+    border:2px solid red;
+    background: black;
+    cursor:pointer;
+}
+#circles li.active {
+    background:red;
+    border:2px solid black;
+}
+
+
+/* SLIDER */
+
+
+
+
+
 a {
   color: grey;
 }
@@ -178,9 +244,17 @@ Artist Styling
   text-align: center;
   list-style-position: inside;
 }
+<<<<<<< HEAD
+
+/*#pics {
+  display: none;
+}*/
+
+=======
 #pics {
   display: none;
 }
+>>>>>>> ac4256dbb400e9a630a4ef1d93a5411b0419935c
 iframe {
   display: block;
   margin: 0 auto;
@@ -322,7 +396,7 @@ article.artist-results.col-md-4 img {
 }
 .search-field {
   display: inline;
-  width: 60%;`
+  width: 60%;
 }
 .search-btn {
   display: inline-block;
