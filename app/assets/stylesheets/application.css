@@ -96,6 +96,10 @@ i {
   color: grey;
 }
 
+.logo {
+  width: 225px;
+}
+
 /************************************************************************************
 Artist Styling
 ************************************************************************************/
@@ -208,6 +212,52 @@ Search Form Styling
 #search {
 padding: 7px 0;
 }
+
+#search-results {
+  margin: 5em 5em;
+}
+
+.artist-results {
+  float: left;
+  display: inline-block;
+  width: 33%;
+  margin-left: 8em;
+}
+
+.artist-results h1,
+.artist-results h2 {
+  text-align: center;
+}
+
+.artist-results img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+}
+
+.album-results {
+  float: right;
+  display: inline-block;
+  width: 33%;
+  margin-right: 8em;
+}
+
+.album-results h1,
+.album-results h3 {
+  text-align: center;
+}
+
+.album-results img {
+  display: block;
+  margin: 1em auto 4em auto;
+  border: 2px solid black;
+}
+
+.text-center {
+  margin-top: 2em;
+}
+
 .search-field {
   display: inline;
   width: 60%;`

@@ -1,21 +1,25 @@
 <h1 class ="text-center">Search Results</h1>
-<% if @artists.any? %>
-  <ul>
-    <% @artists.each do |artist| %>
-    <li>
-      <%= link_to artist.name, artist_path(artist) %>
-    </li>
-  <% end %>
-  </ul>
-<% end %>
 
-<% if @albums.any? %>
-  <h1>Matching Albums</h1>
-  <% @albums.each do |album| %>
-    <br>
-    <%= link_to album.name, album_path(album) %>
-  <% end %>
-<% end %>
+<div id="search-results">
+  <article class="artist-results">
+    <% if @artists.any? %>
+      <h1 style="text-decoration: underline">Matching Artists</h1>
+        <% @artists.each do |artist| %>
+          <h2><%= link_to artist.name, artist_path(artist) %></h2>
+          <%= link_to image_tag(artist.photo), artist_path(artist) %>
+      <% end %>
+    <% end %>
+  </article>
+  <article class="album-results">
+    <% if @albums.any? %>
+      <h1 style="text-decoration: underline">Matching Albums</h1>
+        <% @albums.each do |album| %>
+          <h3><%= link_to album.name, album_path(album) %></h3>
+          <%= link_to image_tag(album.photo), album_path(album) %>
+        <% end %>
+    <% end %>
+  </article>
+</div>
 
 <% if (@artists.empty?) && (@albums.empty?) %> <!--how to type in nothing and this comes up -->
   <script type="text/javascript">
