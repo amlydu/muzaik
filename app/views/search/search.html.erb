@@ -1,16 +1,19 @@
 <h1 class ="text-center">Search Results</h1>
 <% if @artists.any? %>
-  <ul>
+  <h1 style="text-align:center; font-size:2em;">Artists</h1>
+  <ul id="artist-list">
     <% @artists.each do |artist| %>
-    <li>
+    <li style="font-size:2em;">
+
       <%= link_to artist.name, artist_path(artist) %>
     </li>
+    <br>
   <% end %>
   </ul>
 <% end %>
 
 <% if @albums.any? %>
-  <h1>Matching Albums</h1>
+  <h1 style="text-align:center;">Matching Albums</h1>
   <% @albums.each do |album| %>
     <br>
     <%= link_to album.name, album_path(album) %>

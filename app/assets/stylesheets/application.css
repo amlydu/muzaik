@@ -23,6 +23,16 @@
   padding-top: 0;
   box-sizing: border-box;
 }
+
+#artist-list{
+  border-radius: 10%;
+  border-style: solid;
+  border-color: grey;
+  padding: 3%;
+}
+
+
+
 nav ul {
   list-style: none;
   color: white;
