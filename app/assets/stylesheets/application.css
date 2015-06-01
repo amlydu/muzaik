@@ -23,6 +23,9 @@
   padding-top: 0;
   box-sizing: border-box;
 }
+a {
+  color: grey;
+}
 nav ul {
   list-style: none;
   color: white;
