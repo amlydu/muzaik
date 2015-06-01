@@ -3,7 +3,7 @@
     <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Search Muzaik..." %>
     <span class="input-group-btn">
   <!--     <button class="btn btn-default" type="button">Go!</button> -->
-      <%= button_tag "Go!", :name => nil, :class => "btn btn-default", :type => "button" %>
+      <%= submit_tag "Go!", :name => nil, :class => "btn btn-default", :id => "click-search-button" %>
     </span>
   </div>
 <% end %>

@@ -22,27 +22,10 @@ var ready = function() {
 /*********************************************************************
 Landing Page: Fade Out
 *********************************************************************/
-  $(function(){
-     $('#click-search-button').click(function(e) {
-      e.preventDefault();
-      newLocation = this.href;
-      console.log(newLocation);
-     $('html').fadeOut(1400, newpage);
-     });
-     function newpage() {
-      window.location = newLocation;
-     }
+  $("#click-search-button").click(function(){
+    $("#fade-out-landing").fadeOut(2200);
   });
 
-  /*! Reloads page on every visit */
-  function Reload() {
-    try {
-      var headElement = document.getElementsByTagName("head")[0];
-    if (headElement && headElement.innerHTML)
-    headElement.innerHTML += "<meta http-equiv=\"refresh\" content=\"1\">";
-    }
-    catch (e) {}
-  }
 
 /*********************************************************************
 Content Information Toggling
@@ -130,9 +113,9 @@ Side Nav JS
 /*********************************************************************
 Slide in Search JS
 *********************************************************************/
-$(window).load(function(){
-  $( ".thumbnail" ).show(1500).delay(100).fadeIn("slow");
-});
+  $(window).load(function(){
+    $( ".thumbnail" ).show(1500).delay(100).fadeIn("slow");
+  });
 
 };
 $(document).ready(ready);
