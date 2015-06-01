@@ -43,7 +43,7 @@ class ArtistsController < ApplicationController
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
-        format.html { redirect_to root_path, notice: "Spindex couldn't index that request. Maybe try a different spelling." }
+        format.html { redirect_to root_path, notice: "Musiak couldn't index that request. Maybe try a different spelling." }
         format.json { render json: @artist.errors, status: :unprocessable_entity }
       end
     end
