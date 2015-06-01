@@ -308,6 +308,11 @@ padding: 7px 0;
 .artist-img-size img {
   border-radius: 5px;
   max-height: 250px;
+  margin: 10px 0;
+}
+.caption {
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
 }
 article.artist-results.col-md-4 img {
   border-radius: 5px;
