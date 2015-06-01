@@ -74,7 +74,7 @@
         <br>
       </div>
     </div>
- 
+
 
   <div id="bio">
     <%= image_tag((@artist.photo), :class => "artist-image") %>
@@ -115,6 +115,29 @@
   <div id="pics">
     <% if @artist.picture %>
     <% pictures = @artist.picture.split("\", \"")[1..13] %>
+
+
+      <!-- SLIDER -->
+      <center>
+            <h1> <%= @artist.name %> Photos </h1>
+            <div id="slide-container">
+            <div id="prev-btn">
+                <a class="prev" href="#"> <%= image_tag "left-arrow.png" %></a>
+            </div>
+                <div class="carousel">
+                    <div><%= image_tag pictures.sample %></div>
+                    <div><%= image_tag pictures.sample %></div>
+                    <div><%= image_tag pictures.sample %></div>
+                    <div><%= image_tag pictures.sample %></div>
+                    <div><%= image_tag pictures.sample %></div>
+                </div>
+            <div id="next-btn">
+              <a class="next" href="#"><%= image_tag "right-arrow.png" %></a>
+            </div>
+            </div>
+        </center>
+  <!--SLIDER-->
+
     <% pictures.each do |pic| %>
     <%= image_tag(pic) %>
     <% end %>
