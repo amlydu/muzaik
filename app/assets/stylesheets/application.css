@@ -26,6 +26,10 @@
 a {
   color: grey;
 }
+a:active {
+  text-decoration: none;
+  color: white;
+}
 nav ul {
   list-style: none;
   color: white;
@@ -56,9 +60,12 @@ ul.nav.navbar-nav.side-nav {
 }
 ul.nav.navbar-nav.side-nav li {
   display: block;
-  margin: 2.5em 1em 2.5em 3em;
+  margin: 2.5em;
+  width: 100%;
 }
-
+ul.nav.navbar-nav.side-nav li:hover {
+  background-color: #222;
+}
 #sign-up-p {
   margin: 0;
   color: #9d9d9d;
@@ -66,15 +73,12 @@ ul.nav.navbar-nav.side-nav li {
 #sign-up-p a {
   color: white;
 }
-
 /*Star Rating Size*/
 div.star {
   text-align: center;
 }
-
 div.star img {
   height: 18px;
-
 }
 #login {
   margin: 0 0 0 auto;
@@ -91,19 +95,20 @@ div.star img {
   cursor: pointer;
 }
 
-a:link {
-    color: grey;
-}
-
 a:hover {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
-
+a:active {
+  text-decoration: none;
+  color: white;
+}
+.about-us-main a:hover {
+  color: black;
+}
 i {
   color: grey;
 }
-
 .logo {
   width: 225px;
 }
@@ -139,6 +144,7 @@ Artist Styling
 
 #bio img {
   border: 2px solid black;
+  border-radius: 5px;
 }
 
 .col-md-4 h2,
