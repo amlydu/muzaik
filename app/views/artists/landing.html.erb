@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The IMDB of Music!">
   <meta name="author" content="Team Two">
-  <title>Spindex</title>
+  <title>Muzaik</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag "bootstrap.min", "landing" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,13 +13,20 @@
 <body>
   <nav class="mainmenu">
     <div class="container">
-    <div id="landing-logo"> Muzaik</div>
-    <div id="lga"></div>
+    <!-- <div id="lga"></div> -->
+      <%= image_tag "http://i.imgur.com/5S5LLBp.png", :class=>"landing-name" %>
       <%= render 'search/form' %>
     </div>
     <div class="notice">
       <h3><%= flash[:notice] %></h3>
     </div>
+
+  <div id="landing-divider">
+    <p style ="font-size:1.5em;">Welcome to Music</p>
+
+    <%= link_to "Contact", contact_path %>
+  </div>
+
   </nav>
 
   <%= javascript_include_tag 'bootstrap.min' %>

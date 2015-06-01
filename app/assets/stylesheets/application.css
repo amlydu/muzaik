@@ -24,14 +24,10 @@
   box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Alfa';
-    src: url("/assets/fonts/AlfaSlabOne-Regular.ttf");
+.landing-name{
+
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Alfa';
-}
 .nav-logo{
   width: 135px;
   margin-top: -50%;
