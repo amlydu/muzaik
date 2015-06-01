@@ -156,7 +156,7 @@ Side Nav JS
 Slide in Search JS
 *********************************************************************/
   $(window).load(function(){
-    $( ".thumbnail" ).show(1500).delay(100).fadeIn("slow");
+    $( ".thumbnail" ).show(1500).fadeIn("fast");
   });
 
 };
