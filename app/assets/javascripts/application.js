@@ -155,9 +155,9 @@ Side Nav JS
 /*********************************************************************
 Slide in Search JS
 *********************************************************************/
-  $(window).load(function(){
-    $( ".thumbnail" ).show(1500).delay(100).fadeIn("slow");
-  });
+  // $(window).load(function(){
+  //   $( ".thumbnail" ).show(1500).delay(100).fadeIn("slow");
+  // });
 
 };
 $(document).ready(ready);
