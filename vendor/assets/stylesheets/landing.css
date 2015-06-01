@@ -34,6 +34,9 @@ body {
   padding: 10px;
   color: black;
 }
+input#click-search-button {
+  margin-top: 0;
+}
 div#lga {
   height:231px;
   margin-top:80px
@@ -53,7 +56,6 @@ div#lga {
     position: fixed;
   }
 }
-
 .notice h3 {
   text-align: center;
 }
