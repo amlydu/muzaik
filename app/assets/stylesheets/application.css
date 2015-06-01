@@ -190,13 +190,13 @@ Artist Styling
 
 iframe {
   display: none;
-/*  display: block;*/
+  display: block;
   margin: 0 auto;
 }
 
 #YT {
   display: none;
-/*  display: block;*/
+  display: block;
   margin: 2em auto;
 }
 
