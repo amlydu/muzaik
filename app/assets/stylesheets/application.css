@@ -119,6 +119,10 @@ img {
 input {
   color: black;
 }
+h1 {
+  font-variant: small-caps;
+  font-weight: bolder;
+}
 
 /* Left-Navbar Styling*/
 ul.nav.navbar-nav.side-nav {
@@ -175,6 +179,9 @@ a:active {
 i {
   color: grey;
 }
+i.accordion_icon.fa.fa-plus {
+  font-size: 1em;
+}
 .logo {
   width: 225px;
 }
@@ -199,7 +206,6 @@ Artist Styling
   font-variant: small-caps;
   text-align: center;
 }
-
 #bio {
   background-color: lightgrey;
   border-radius: 1.5em;
@@ -207,85 +213,82 @@ Artist Styling
   padding: 2em;
   border: 1px solid black;
 }
-
 #bio img {
   border: 2px solid black;
   border-radius: 5px;
 }
-
 .col-md-4 h2,
 .col-md-4 p {
   text-align: center;
 }
-
 .artist-name {
   padding-bottom: 3em;
 }
-
 .accordion_title {
   border: 1px solid grey;
 }
-
-/*#bio {
-  display: none;
-}*/
-
 #albums {
   display: none;
-  margin-top: 15em;
+  margin-top: 8em;
 }
-
 #albums p {
   text-align: center;
 }
-
 #album-photo img {
   display: block;
   margin: 0 auto;
+  border-radius: 8%;
 }
-
 .track-list {
   margin: 1em 0;
   text-align: center;
   list-style-position: inside;
 }
+<<<<<<< HEAD
 
 /*#pics {
   display: none;
 }*/
 
+=======
+#pics {
+  display: none;
+}
+>>>>>>> ac4256dbb400e9a630a4ef1d93a5411b0419935c
 iframe {
   display: block;
   margin: 0 auto;
 }
-
 #YT {
   display: none;
-  display: block;
   margin: 2em auto;
 }
-
 #twitter {
   display: none;
 }
-
 #FB-comments {
   display: none;
 }
-
-
 .artist-container {
   padding-left: 225px;
 }
-
+div#FB-comments {
+  text-align: center;
+}
+.fb-comments.fb_iframe_widget {
+  border: 1px solid #222;
+  padding: 15px 50px;
+  border-radius: 5px;
+  margin-top: 18px;
+}
 
 /************************************************************************************
 Twitter Styling
 ************************************************************************************/
 
 .twitter-timeline {
-      width: 100% !important;
-    }
+  width: 100% !important;
+}
 
 /************************************************************************************
 Albums Styling
@@ -341,52 +344,51 @@ Search Form Styling
 #search {
 padding: 7px 0;
 }
-
 #search-results {
   margin: 5em 5em;
 }
-
 .artist-results {
   float: left;
   display: inline-block;
   width: 33%;
   margin-left: 8em;
 }
-
 .artist-results h1,
 .artist-results h2 {
   text-align: center;
 }
-
 .artist-results img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   border: 2px solid black;
 }
-
 .album-results {
   float: right;
   display: inline-block;
   width: 33%;
   margin-right: 8em;
 }
-
 .album-results h1,
 .album-results h3 {
   text-align: center;
 }
-
-.album-results img {
-  display: block;
-  margin: 1em auto 4em auto;
-  border: 2px solid black;
+.thumbnail h3{
+  margin-top: 0;
 }
-
-.text-center {
-  margin-top: 2em;
+.search-container a:hover {
+  color: black;
 }
-
+.artist-img-size img {
+  border-radius: 5px;
+  max-height: 250px;
+}
+article.artist-results.col-md-4 img {
+  border-radius: 5px;
+}
+.search-top h1 {
+  margin-top: 0;
+}
 .search-field {
   display: inline;
   width: 60%;
