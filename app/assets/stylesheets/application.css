@@ -199,7 +199,15 @@ iframe {
 .artist-container {
   padding-left: 225px;
 }
-
+div#FB-comments {
+  text-align: center;
+}
+.fb-comments.fb_iframe_widget {
+  border: 1px solid #222;
+  padding: 15px 50px;
+  border-radius: 5px;
+  margin-top: 18px;
+}
 
 /************************************************************************************
 Twitter Styling
