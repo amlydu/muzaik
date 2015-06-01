@@ -65,8 +65,13 @@ ul.nav.navbar-nav.side-nav li {
 }
 
 /*Star Rating Size*/
+div.star {
+  text-align: center;
+}
+
 div.star img {
-  height: 15px;
+  height: 18px;
+
 }
 #login {
   margin: 0 0 0 auto;
@@ -106,7 +111,7 @@ Artist Styling
 
 .artist-image {
   float: left;
-  padding: 0 1em 1em 0;
+  margin: 0 1em 1em 0;
 }
 .admin-links {
   font-size: .5em;
@@ -118,6 +123,20 @@ Artist Styling
   font-weight: bolder;
   font-size: 4em;
   font-variant: small-caps;
+  text-align: center;
+}
+
+#bio img {
+  border: 2px solid black;
+}
+
+.col-md-4 h2,
+.col-md-4 p {
+  text-align: center;
+}
+
+.accordion_title {
+  border: 1px solid grey;
 }
 
 /*#bio {
@@ -126,6 +145,7 @@ Artist Styling
 
 #albums {
   display: none;
+  margin-top: 15em;
 }
 
 #pics {
