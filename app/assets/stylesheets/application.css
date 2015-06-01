@@ -182,13 +182,11 @@ Artist Styling
   display: none;
 }
 iframe {
-  display: none;
   display: block;
   margin: 0 auto;
 }
 #YT {
   display: none;
-  display: block;
   margin: 2em auto;
 }
 #twitter {
