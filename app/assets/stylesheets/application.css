@@ -26,14 +26,16 @@
 
 
 /* SLIDER */
-
+#center{
+  margin-top: -5%;
+}
 #slide-container{
     overflow: hidden;
     height: 600px;
+    margin-right: 20%;
+    margin-top: -4%;
 }
-.carousel-control > img{
-    margin-top: 252px;
-}
+
 .carousel-control{
     width: 63px;
     background: black;
@@ -42,19 +44,18 @@
 .carousel > div:not(.active){
     display: none;
 }
-
-#next-btn{
-  width: 100%;
+.prev{
+  margin-left: -30%;
 }
 .next{
-    float: right;
+  margin-right: -40%;
+  margin-top: -41%;
 }
-.prev{
-    float: left;
-}
+
 .carousel{
     width: 80%;
-    float: left;
+    margin-top: -20%;
+    margin-right: -18%;
 }
 #circles {
   list-style:none;

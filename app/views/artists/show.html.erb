@@ -115,17 +115,16 @@
     </div>
 
 
-<<<<<<< HEAD
   <div id="pics">
     <% if @artist.picture %>
     <% pictures = @artist.picture.split("\", \"")[1..13] %>
 
 
       <!-- SLIDER -->
-      <center>
+      <center id ="center">
             <h1> <%= @artist.name %> Photos </h1>
             <div id="slide-container">
-            <div id="prev-btn">
+            <div class="prev">
                 <a class="prev" href="#"> <%= image_tag "left-arrow.png" %></a>
             </div>
                 <div class="carousel">
@@ -135,7 +134,7 @@
                     <div><%= image_tag pictures.sample %></div>
                     <div><%= image_tag pictures.sample %></div>
                 </div>
-            <div id="next-btn">
+            <div class="next">
               <a class="next" href="#"><%= image_tag "right-arrow.png" %></a>
             </div>
             </div>
@@ -147,7 +146,7 @@
     <% end %>
     <% end %>
   </div>
-=======
+
     <div id="pics">
       <% if @artist.picture %>
       <% pictures = @artist.picture.split("\", \"")[1..13] %>
@@ -156,7 +155,6 @@
       <% end %>
       <% end %>
     </div>
->>>>>>> f820fdad979260abbf8141915878445e2dc52cd7
 
     <div id="YT">
       <iframe id="ytplayer" type="text/html" width="960" height="585"
