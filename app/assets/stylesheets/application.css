@@ -24,11 +24,18 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Alfa';
+    src: url("AlfaSlabOne-Regular.ttf");
+}
+
+#logo{
+  font-family: 'Alfa';
+  color:white;
+}
 
 /* SLIDER */
-#center{
-  margin-top: -5%;
-}
+
 #slide-container{
     overflow: hidden;
     height: 600px;
