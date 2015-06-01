@@ -341,6 +341,16 @@ padding: 7px 0;
 #search-results {
   margin: 5em 5em;
 }
+.search-top h1 {
+  margin-bottom: 0;
+}
+.search-top p {
+  text-align: center;
+  margin-bottom: 0;
+}
+.search-top p img {
+  max-height: 50px;
+}
 .artist-results {
   float: left;
   display: inline-block;
