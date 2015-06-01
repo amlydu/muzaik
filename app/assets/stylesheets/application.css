@@ -353,6 +353,7 @@ Search Form Styling
 .thumbnail {
   border-radius: 0;
   background-color: rgba(225, 225, 225,0.9);
+  border: 3px solid black;
 }
 .thumbnail h2 {
   color: #222;
@@ -372,6 +373,7 @@ padding: 7px 0;
   margin-bottom: 0;
   color: #222;
   background-color: rgba(225, 225, 225,0.9);
+  border: 3px solid black;
 }
 .search-top p {
   text-align: center;
