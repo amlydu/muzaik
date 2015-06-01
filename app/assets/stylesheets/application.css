@@ -187,7 +187,15 @@ i.accordion_icon.fa.fa-plus {
 /************************************************************************************
 Artist Styling
 ************************************************************************************/
-
+html,
+#page-wrapper {
+  background-image: url("http://i.imgur.com/oh9jIhZ.jpg");
+  background-attachment: fixed;
+  min-height: 100%;
+}
+div#artists-background {
+  background-color: rgba(255, 255, 255, 0.9);
+}
 .artist-image {
   float: left;
   margin: 0 1em 1em 0;
@@ -205,11 +213,10 @@ Artist Styling
   font-size: 8em;
 }
 #bio {
-  background-color: lightgrey;
-  border-radius: 1.5em;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 9em 0 0 0;
   padding: 2em;
-  border: 1px solid black;
+  border-top: 3px solid black;
 }
 #bio img {
   border: 2px solid black;
@@ -337,12 +344,15 @@ Devise Form Styling
 /************************************************************************************
 Search Form Styling
 ************************************************************************************/
-.container.marketing.contact-page {
-  background-image: url("music.jpg");
-  background-attachment: fixed;
-}
 .thumbnail {
-  display: none;
+  border-radius: 0;
+  background-color: rgba(225, 225, 225,0.9);
+}
+.thumbnail h2 {
+  color: #222;
+}
+.thumbnail a {
+  color: black;
 }
 #search {
 padding: 7px 0;
@@ -351,7 +361,11 @@ padding: 7px 0;
   margin: 5em 5em;
 }
 .search-top h1 {
+  font-size: 6em;
+  margin-top: 20px;
   margin-bottom: 0;
+  color: #222;
+  background-color: rgba(225, 225, 225,0.9);
 }
 .search-top p {
   text-align: center;
@@ -390,23 +404,17 @@ padding: 7px 0;
   margin-top: 0;
 }
 .search-container a:hover {
-  color: black;
+  color: white;
 }
 .artist-img-size img {
-  border-radius: 5px;
   max-height: 250px;
   margin: 10px 0;
 }
 .caption {
-  background-color: rgb(238, 238, 238);
-  border-radius: 5px;
+  background-color: rgba(235,145,31, 0.7);
 }
 article.artist-results.col-md-4 img {
   border-radius: 5px;
-}
-.search-top h1 {
-  margin-top: 0;
-  color: white
 }
 .search-field {
   display: inline;
@@ -423,10 +431,7 @@ div#shruggie {
   font-size: 5em;
   text-align: center;
   margin-top: 50px;
-}
-.jumbotron {
-  background-image: url('music.jpg');
-  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /************************************************************************************
@@ -434,6 +439,10 @@ Contact
 ************************************************************************************/
 .about-us-main {
   padding-right: 20px;
+}
+#contact-title {
+  margin-top: 20px;
+  font-size: 5em;
 }
 .marketing .col-lg-4 {
   text-align: center;
@@ -445,22 +454,19 @@ Contact
   color: black;
 }
 .about-me {
-  background-color: rgba(56, 160, 224, .5);
+  background-color: rgba(235,145,31, 0.7);
   color: black;
   padding: 40px 25px;
-  border-radius: 3px;
   font-size: 14px;
 }
 .row.color {
-  background-color: rgba(255, 255, 255, 0.53);
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 23px 0;
 }
-#contact-title {
+.contact-heading {
   text-align: center;
   padding: 15px 0 20px 0;
-  background-color: rgba(255, 255, 255, 0.53);
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
   color: rgb(34, 34, 34);
 }
 .img-circle {

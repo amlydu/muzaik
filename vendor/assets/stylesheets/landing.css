@@ -42,7 +42,7 @@ body {
   padding: 10px;
   color: black;
 }
-input#click-search-button {
+input.click-search-button {
   margin-top: 0;
 }
 div#lga {

@@ -22,7 +22,7 @@ var ready = function() {
 /*********************************************************************
 Landing Page: Fade Out
 *********************************************************************/
-  $("#click-search-button").click(function(){
+  $(".click-search-button").click(function(){
     $("#fade-out-landing").fadeOut("slow");
   });
 
@@ -155,9 +155,7 @@ Side Nav JS
 /*********************************************************************
 Slide in Search JS
 *********************************************************************/
-  $(window).load(function(){
-    $( ".thumbnail" ).show(1500).fadeIn("fast");
-  });
+
 
 };
 $(document).ready(ready);
