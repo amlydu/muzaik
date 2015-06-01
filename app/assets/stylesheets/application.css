@@ -281,27 +281,31 @@ Contact
 
 .marketing .col-lg-4 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 30px 0 30px 0;
   padding: 20px;
   min-height: 425px;
-  /*background: url('separator.png') no-repeat top;*/
   background-size: 590px;
   font-size: 14px;
   color: black;
 }
 .about-me {
-  background-color: rgba(56, 160, 224, .7);
-  color: white;
+  background-color: rgba(56, 160, 224, .5);
+  color: black;
   padding: 40px 25px;
   border-radius: 3px;
   font-size: 14px;
 }
+.row.color {
+  background-color: rgba(157, 157, 157, 0.2);
+  border-radius: 5px;
+  margin: 23px 0;
+}
 #contact-title {
   text-align: center;
   padding: 15px 0 20px 0;
-  background-color: rgb(34, 34, 34);
+  background-color: rgba(157, 157, 157, 0.2);
   border-radius: 5px;
-  color: white;
+  color: rgb(34, 34, 34);
 }
 .img-circle {
   border-radius: 50%;
