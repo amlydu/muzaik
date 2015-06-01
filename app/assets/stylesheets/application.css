@@ -25,6 +25,7 @@
   padding-top: 0;
   box-sizing: border-box;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 800;
@@ -247,6 +248,10 @@ div#artists-background {
   margin: 1em 0;
   text-align: center;
   list-style-position: inside;
+}
+
+#landing-logo{
+  font-family:
 }
 
 #pics {

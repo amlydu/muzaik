@@ -4,7 +4,7 @@
 */
 
 html {
-  background: url('http://i.imgur.com/OlMPF3i.jpg') no-repeat center center fixed;
+  background: url("http://i.imgur.com/oh9jIhZ.jpg");
   min-height:100%;
   min-width:100%;
   -webkit-background-size: cover;
@@ -24,6 +24,14 @@ body {
   color:rgba(255,255,255,.8);
   font-weight: normal;
 }
+
+.landing-name{
+  width: 100%;
+  margin-bottom: -35%;
+  margin-left: 4%;
+  margin-top: -5%;
+}
+
 .container,
 .search-btn {
   text-align: center;
@@ -58,4 +66,24 @@ div#lga {
 }
 .notice h3 {
   text-align: center;
+}
+
+#explain{
+  background-color:rgba(255,255,255,.3);
+
+  padding: 1%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 50%;
+  margin-left: 24%;
+}
+#landing-divider{
+  height:175px;
+  margin-top: 5%;
+  width: 40%;
+  margin-left: 30%;
+  color: white;
+  font-size: 1.5em;
+  text-align:center;
+
 }
