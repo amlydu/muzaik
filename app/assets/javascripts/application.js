@@ -23,7 +23,7 @@ var ready = function() {
 Landing Page: Fade Out
 *********************************************************************/
   $("#click-search-button").click(function(){
-    $("#fade-out-landing").fadeOut(2200);
+    $("#fade-out-landing").fadeOut("slow");
   });
 
 
