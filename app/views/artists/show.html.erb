@@ -8,66 +8,42 @@
   <div id="wrapper">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="col-md-2">
-        <%= link_to "SpIndex", root_path, class: "navbar-brand" %>
-      </div>
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <!-- Top Menu Items -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <div class="col-md-4" id="search">
-          <%= render 'search/form' %>
-        </div>
-        <div class="col-md-5 col-md-offset-1 nav navbar-right top-nav">
-          <%= render "artists/login" %>
-        </div>
-      </div>
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-          <!-- CHANGE DASHBOARD URL/BASE!!-->
-          <li class="<%= is_active?(artist_path) %>" id="bio-btn">
-            <i class="fa  fa-arrow-circle-o-right">
-              <a href="#" data-toggle="#bio">Biography</a>
-            </i>
-          </li>
-          <li class="<%= is_active?(albums_path) %>" id="albums-btn">
-            <i class="fa  fa-arrow-circle-o-right">
-              <a href="#" data-toggle="#albums">Albums</a>
-            </i>
-          </li>
-          <li class="<%= is_active?(artist_path) %>" id="pics-btn">
-            <i class="fa  fa-arrow-circle-o-right">
-              <a href="#" data-toggle="#pics">Pictures</a>
-            </i>
-          </li>
-          <li class="<%= is_active?(artist_path) %>" id="YT-btn">
-            <i class="fa  fa-arrow-circle-o-right">
-              <a href="" data-toggle="#YT">Videos</a>
-            </i>
-          </li>
-          <li class="<%= is_active?(artist_path) %>" id="twitter-btn">
-            <i class="fa  fa-arrow-circle-o-right">
-              <a href="#" data-toggle="#twitter">Twitter</a>
-            </i>
-          </li>
-          <li class="<%= is_active?(artist_path) %>" id="FB-comments-btn">
-            <i class="fa  fa-arrow-circle-o-right">
-              <a href="#" data-toggle="#FB-comments">Discussion</a>
-            </i>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <!-- CHANGE DASHBOARD URL/BASE!!-->
+        <li class="<%= is_active?(artist_path) %>" id="bio-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#bio">Biography</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(albums_path) %>" id="albums-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#albums">Albums</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="pics-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#pics">Pictures</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="YT-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="" data-toggle="#YT">Videos</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="twitter-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#twitter">Twitter</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="FB-comments-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#FB-comments">Discussion</a>
+          </i>
+        </li>
+      </ul>
+    </div>
   </div>
-
   <div class="wrapper">
     <div class="artist-name">
       <h1><%= @artist.name %>
