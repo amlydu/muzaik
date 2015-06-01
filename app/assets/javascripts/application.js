@@ -103,7 +103,7 @@ Side Nav JS
 
   // $('#pics-btn').click(function(){
   //   $('#pics').toggle();
-  //   $('#albums, #bio, #YT, #twitter, #FB-comments').hide();  
+  //   $('#albums, #bio, #YT, #twitter, #FB-comments').hide();
   // });
 
   // $('#YT-btn').click(function(){
@@ -118,7 +118,7 @@ Side Nav JS
 
   // $('#FB-comments-btn').click(function(){
   //   $('#FB-comments').toggle();
-  // });  
+  // });
 
   $("a[data-toggle]").on("click", function(e) {
     e.preventDefault();  // prevent navigating
@@ -126,6 +126,13 @@ Side Nav JS
     $("#bio, #albums, #pics, #YT, #twitter, #FB-comments").hide();
     $(selector).show();
   });
+
+/*********************************************************************
+Slide in Search JS
+*********************************************************************/
+$(window).load(function(){
+  $( ".thumbnail" ).show(1500).delay(100).fadeIn("slow");
+});
 
 };
 $(document).ready(ready);
