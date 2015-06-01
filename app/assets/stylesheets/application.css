@@ -24,6 +24,7 @@
   box-sizing: border-box;
 }
 
+
 /* SLIDER */
 
 #slide-container{
@@ -79,6 +80,10 @@
 
 
 
+
+a {
+  color: grey;
+}
 nav ul {
   list-style: none;
   color: white;
@@ -121,8 +126,13 @@ ul.nav.navbar-nav.side-nav li {
 }
 
 /*Star Rating Size*/
+div.star {
+  text-align: center;
+}
+
 div.star img {
-  height: 15px;
+  height: 18px;
+
 }
 #login {
   margin: 0 0 0 auto;
@@ -162,7 +172,7 @@ Artist Styling
 
 .artist-image {
   float: left;
-  padding: 0 1em 1em 0;
+  margin: 0 1em 1em 0;
 }
 .admin-links {
   font-size: .5em;
@@ -174,6 +184,32 @@ Artist Styling
   font-weight: bolder;
   font-size: 4em;
   font-variant: small-caps;
+  text-align: center;
+}
+
+#bio {
+  background-color: lightgrey;
+  border-radius: 1.5em;
+  margin: 9em 0 0 0;
+  padding: 2em;
+  border: 1px solid black;
+}
+
+#bio img {
+  border: 2px solid black;
+}
+
+.col-md-4 h2,
+.col-md-4 p {
+  text-align: center;
+}
+
+.artist-name {
+  padding-bottom: 3em;
+}
+
+.accordion_title {
+  border: 1px solid grey;
 }
 
 /*#bio {
@@ -182,14 +218,37 @@ Artist Styling
 
 #albums {
   display: none;
+  margin-top: 15em;
+}
+
+#albums p {
+  text-align: center;
+}
+
+#album-photo img {
+  display: block;
+  margin: 0 auto;
+}
+
+.track-list {
+  margin: 1em 0;
+  text-align: center;
+  list-style-position: inside;
 }
 
 /*#pics {
   display: none;
 }*/
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 #YT {
   display: none;
+  display: block;
+  margin: 2em auto;
 }
 
 #twitter {
@@ -329,6 +388,52 @@ div#shruggie {
   font-size: 5em;
   text-align: center;
   margin-top: 50px;
+}
+
+/************************************************************************************
+Contact
+************************************************************************************/
+.about-us-main {
+  padding-right: 20px;
+}
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 30px 0 30px 0;
+  padding: 20px;
+  min-height: 425px;
+  background-size: 590px;
+  font-size: 14px;
+  color: black;
+}
+.about-me {
+  background-color: rgba(56, 160, 224, .5);
+  color: black;
+  padding: 40px 25px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.row.color {
+  background-color: rgba(157, 157, 157, 0.2);
+  border-radius: 5px;
+  margin: 23px 0;
+}
+#contact-title {
+  text-align: center;
+  padding: 15px 0 20px 0;
+  background-color: rgba(157, 157, 157, 0.2);
+  border-radius: 5px;
+  color: rgb(34, 34, 34);
+}
+.img-circle {
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  vertical-align: middle;
+  background: gray;
+  border: 3px solid rgba(34, 34, 34, 0.8);
+}
+.marketing .btn {
+  margin-top: 10px;
 }
 
 /************************************************************************************

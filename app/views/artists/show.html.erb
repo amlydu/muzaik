@@ -46,8 +46,7 @@
   </div>
   <div class="wrapper">
     <div class="artist-name">
-      <h1><%= @artist.name %>
-      </h1>
+      <h1><%= @artist.name %></h1>
       <p>
         <%= rating_for @artist, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => false %>
       </p>
@@ -57,15 +56,17 @@
       </div>
       <div class="col-md-4">
         <h2>Related Artists</h2>
+        <p>
         <% arr = @artist.related_artist.split(", ") %>
         <% arr.each do |art| %>
-        <% name = art.split.map(&:capitalize).join(' ') %>
-        <% if Artist.exists?(name: name) %>
-        <%= link_to art, artist_path(Artist.find_by(name: name)) %>
-        <% else %>
-        <%= p name %>
+          <% name = art.split.map(&:capitalize).join(' ') %>
+          <% if Artist.exists?(name: name) %>
+            |<%= link_to art, artist_path(Artist.find_by(name: name)) %>|
+          <% else %>
+            |<%= p name %>|
+          <% end %>
         <% end %>
-        <% end %>
+        </p>
       </div>
       <div class="col-md-4">
         <h2>Hotness</h2>
@@ -76,15 +77,14 @@
     </div>
 
 
-  <div id="bio">
-    <%= image_tag((@artist.photo), :class => "artist-image") %>
-    <%= simple_format(@artist.biography) %>
-  </div>
+    <div id="bio">
+      <%= image_tag((@artist.photo), :class => "artist-image") %>
+      <%= simple_format(@artist.biography) %>
+    </div>
 
 
-  <div id="albums">
-    <% @artist.albums.each do |album| %>
-      <% if album.photo? %>
+    <div id="albums">
+      <% @artist.albums.each do |album| %>
         <div class="accordion">
           <h2 class="accordion_title">
             <span class="album_title"><%= album.name %></span>
@@ -93,25 +93,29 @@
           </h2>
           <div class="accordion_content">
             <p>
-              Rating: <%= rating_for album, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => false %>
-            </p>
-            <p>
               <strong>Release date:</strong>
               <%= album.release_date %>
             </p>
-            <ul>
-              <% album.songs.each do |song| %>
-                <li><%= song.name %></li>
-              <% end %>
-            </ul>
-            <%= image_tag(album.photo) %>
+            <p>
+              <%= rating_for album, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => false %>
+            </p>
+            <div id="album-photo">
+            <% if album.photo? %>
+              <%= image_tag(album.photo) %>
+            <% end %>
+            </div>
+              <ol class="track-list">
+                <% album.songs.each do |song| %>
+                  <li><%= song.name %></li>
+                <% end %>
+              </ol>
           </div>
         </div>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
 
+<<<<<<< HEAD
   <div id="pics">
     <% if @artist.picture %>
     <% pictures = @artist.picture.split("\", \"")[1..13] %>
@@ -143,29 +147,35 @@
     <% end %>
     <% end %>
   </div>
-
-  <div id="YT">
-    <iframe id="ytplayer" type="text/html" width="640" height="390"
-    src="https://www.youtube.com/embed?listType=search&list=<%= @artist.name %>"
-    frameborder="0"/></iframe>
-  </div>
-
-  <% if @artist.twitter %>
-  <div id="twitter">
-    <div id="demo" class="collapse in">
-      <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
+=======
+    <div id="pics">
+      <% if @artist.picture %>
+      <% pictures = @artist.picture.split("\", \"")[1..13] %>
+      <% pictures.each do |pic| %>
+      <%= image_tag(pic) %>
+      <% end %>
+      <% end %>
     </div>
-  </div>
-<!-- <button type="button" class="btn btn-primary" data-toggle="collapse"
-   data-target="#demo">
-   Tweets
- </button> -->
-  <% end %>
+>>>>>>> f820fdad979260abbf8141915878445e2dc52cd7
 
-   <div id="FB-comments">
-    <div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light">
+    <div id="YT">
+      <iframe id="ytplayer" type="text/html" width="960" height="585"
+      src="https://www.youtube.com/embed?listType=search&list=<%= @artist.name %>"
+      frameborder="0"/></iframe>
     </div>
-  </div>
+
+    <% if @artist.twitter %>
+    <div id="twitter">
+      <div id="demo" class="collapse in">
+        <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
+      </div>
+    </div>
+    <% end %>
+
+    <div id="FB-comments">
+      <div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light">
+      </div>
+    </div>
   </div>
 </div>
 
