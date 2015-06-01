@@ -15,30 +15,20 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
  /************************************************************************************
  General Application Styling
  ************************************************************************************/
 * {
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding-top: 0;
   box-sizing: border-box;
 }
-
-@font-face {
-    font-family: 'Alfa';
-    src: url("AlfaSlabOne-Regular.ttf");
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 800;
 }
-
-.nav-logo{
-  width: 135px;
-  margin-top: -50%;
-  margin-left: 15%;
-  height: 120px;
-  margin-bottom: -45%;
-  padding-bottom: -80%;
-
-}
-
 /* SLIDER */
 
 #slide-container{
@@ -128,11 +118,6 @@ img {
 input {
   color: black;
 }
-h1 {
-  font-variant: small-caps;
-  font-weight: bolder;
-}
-
 /* Left-Navbar Styling*/
 ul.nav.navbar-nav.side-nav {
   display: table-row;
@@ -213,10 +198,10 @@ Artist Styling
   text-align: right;
 }
 .artist-name h1 {
-  font-weight: bolder;
-  font-size: 4em;
-  font-variant: small-caps;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 800;
   text-align: center;
+  font-size: 8em;
 }
 #bio {
   background-color: lightgrey;
@@ -304,6 +289,7 @@ Albums Styling
   border-top: 1px solid #c1c1c1;
 }
 .accordion h2 {
+  font-family: 'Source Sans Pro', sans-serif;
   border: 1px solid #c1c1c1;
   border-top: 0px solid #c1c1c1;
   margin: 0px;
@@ -314,6 +300,7 @@ Albums Styling
 }
 .accordion h2 span.smaller,
 h1 span.smaller {
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
 }
 .accordion h2 span.album_title {
