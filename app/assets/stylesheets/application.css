@@ -244,17 +244,9 @@ Artist Styling
   text-align: center;
   list-style-position: inside;
 }
-<<<<<<< HEAD
-
-/*#pics {
-  display: none;
-}*/
-
-=======
 #pics {
   display: none;
 }
->>>>>>> ac4256dbb400e9a630a4ef1d93a5411b0419935c
 iframe {
   display: block;
   margin: 0 auto;
