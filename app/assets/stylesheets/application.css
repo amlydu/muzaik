@@ -482,6 +482,9 @@ Modal Styling
   cursor: pointer;
   text-decoration: none;
 }
+#shared-links a:hover {
+  color: black;
+}
 
 /************************************************************************************
 Media Queries
