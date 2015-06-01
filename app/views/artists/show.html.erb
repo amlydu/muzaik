@@ -13,32 +13,32 @@
         <!-- CHANGE DASHBOARD URL/BASE!!-->
         <li class="<%= is_active?(artist_path) %>" id="bio-btn">
           <i class="fa  fa-arrow-circle-o-right">
-            <a href="#" data-toggle="#bio">Biography</a>
+            <a href="#" data-toggle2="#bio">Biography</a>
           </i>
         </li>
         <li class="<%= is_active?(albums_path) %>" id="albums-btn">
           <i class="fa  fa-arrow-circle-o-right">
-            <a href="#" data-toggle="#albums">Albums</a>
+            <a href="#" data-toggle2="#albums">Albums</a>
           </i>
         </li>
         <li class="<%= is_active?(artist_path) %>" id="pics-btn">
           <i class="fa  fa-arrow-circle-o-right">
-            <a href="#" data-toggle="#pics">Pictures</a>
+            <a href="#" data-toggle2="#pics">Pictures</a>
           </i>
         </li>
         <li class="<%= is_active?(artist_path) %>" id="YT-btn">
           <i class="fa  fa-arrow-circle-o-right">
-            <a href="" data-toggle="#YT">Videos</a>
+            <a href="" data-toggle2="#YT">Videos</a>
           </i>
         </li>
         <li class="<%= is_active?(artist_path) %>" id="twitter-btn">
           <i class="fa  fa-arrow-circle-o-right">
-            <a href="#" data-toggle="#twitter">Twitter</a>
+            <a href="#" data-toggle2="#twitter">Twitter</a>
           </i>
         </li>
         <li class="<%= is_active?(artist_path) %>" id="FB-comments-btn">
           <i class="fa  fa-arrow-circle-o-right">
-            <a href="#" data-toggle="#FB-comments">Discussion</a>
+            <a href="#" data-toggle2="#FB-comments">Discussion</a>
           </i>
         </li>
       </ul>
@@ -169,6 +169,7 @@
     </div>
     <% end %>
 
+    <div id="fb-root"></div>
     <div id="FB-comments">
       <div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light">
       </div>

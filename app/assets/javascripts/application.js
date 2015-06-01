@@ -145,9 +145,9 @@ Side Nav JS
   //   $('#FB-comments').toggle();
   // });
 
-  $("a[data-toggle]").on("click", function(e) {
+  $("a[data-toggle2]").on("click", function(e) {
     e.preventDefault();  // prevent navigating
-    var selector = $(this).data("toggle");  // get corresponding element
+    var selector = $(this).data("toggle2");  // get corresponding element
     $("#bio, #albums, #pics, #YT, #twitter, #FB-comments").hide();
     $(selector).show();
   });
