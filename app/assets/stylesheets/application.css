@@ -228,9 +228,30 @@ div#shruggie {
 /************************************************************************************
 Contact
 ************************************************************************************/
+
 .marketing .col-lg-4 {
   text-align: center;
-  margin-top: 150px;
+  margin-bottom: 30px;
+  padding: 20px;
+  min-height: 425px;
+  /*background: url('separator.png') no-repeat top;*/
+  background-size: 590px;
+  font-size: 14px;
+  color: black;
+}
+.about-me {
+  background-color: rgba(56, 160, 224, .7);
+  color: white;
+  padding: 40px 25px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+#contact-title {
+  text-align: center;
+  padding: 15px 0 20px 0;
+  background-color: rgb(34, 34, 34);
+  border-radius: 5px;
+  color: white;
 }
 .img-circle {
   border-radius: 50%;
@@ -238,6 +259,10 @@ Contact
   width: 140px;
   vertical-align: middle;
   background: gray;
+  border: 3px solid rgba(34, 34, 34, 0.8);
+}
+.marketing .btn {
+  margin-top: 10px;
 }
 
 /************************************************************************************
