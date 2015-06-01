@@ -250,11 +250,6 @@ Artist Styling
   list-style-position: inside;
 }
 
-
-/*#pics {
-  display: none;
-}*/
-
 #pics {
   display: none;
 }
@@ -343,12 +338,24 @@ Devise Form Styling
 /************************************************************************************
 Search Form Styling
 ************************************************************************************/
-
+.thumbnail {
+  display: none;
+}
 #search {
 padding: 7px 0;
 }
 #search-results {
   margin: 5em 5em;
+}
+.search-top h1 {
+  margin-bottom: 0;
+}
+.search-top p {
+  text-align: center;
+  margin-bottom: 0;
+}
+.search-top p img {
+  max-height: 50px;
 }
 .artist-results {
   float: left;
@@ -385,6 +392,11 @@ padding: 7px 0;
 .artist-img-size img {
   border-radius: 5px;
   max-height: 250px;
+  margin: 10px 0;
+}
+.caption {
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
 }
 article.artist-results.col-md-4 img {
   border-radius: 5px;
@@ -459,9 +471,9 @@ Contact
 Modal Styling
 ************************************************************************************/
 .modal-header {
-  background-color: gray;
+  background-color: rgba(157, 157, 157, 0.2);
   border-radius: 4px 4px 0 0;
-  color: white;
+  color: rgb(34, 34, 34);
 }
 #shared-links,
 .actions ul {
@@ -475,6 +487,9 @@ Modal Styling
 .actions ul li a {
   cursor: pointer;
   text-decoration: none;
+}
+#shared-links a:hover {
+  color: black;
 }
 
 /************************************************************************************

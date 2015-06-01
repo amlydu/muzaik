@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="fade-out-landing">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The IMDB of Music!">
@@ -13,16 +13,12 @@
 <body>
   <nav class="mainmenu">
     <div class="container">
-    <!-- REPLACE WITH SEARCH -->
     <div id="lga"></div>
       <%= render 'search/form' %>
     </div>
     <div class="notice">
       <h3><%= flash[:notice] %></h3>
     </div>
-    <!--<div class="search-btn">
-      <%#= link_to "Search Spindex", dashboard_path, :class => "btn", :id => "click-search-button" %>
-    </div>-->
   </nav>
 
   <%= javascript_include_tag 'bootstrap.min' %>
