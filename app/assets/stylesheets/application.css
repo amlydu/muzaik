@@ -29,9 +29,14 @@
     src: url("AlfaSlabOne-Regular.ttf");
 }
 
-#logo{
-  font-family: 'Alfa';
-  color:white;
+.nav-logo{
+  width: 135px;
+  margin-top: -50%;
+  margin-left: 15%;
+  height: 120px;
+  margin-bottom: -45%;
+  padding-bottom: -80%;
+
 }
 
 /* SLIDER */
@@ -244,6 +249,7 @@ Artist Styling
   text-align: center;
   list-style-position: inside;
 }
+
 #pics {
   display: none;
 }
