@@ -17,8 +17,6 @@
             </div>
           <% end %>
         <% end %>
-      </div>
-      <div class="row">
         <% if @albums.any? %>
           <% @albums.each do |album| %>
             <div class="col-sm-6 col-md-4">
@@ -33,7 +31,6 @@
           <% end %>
         <% end %>
       </div>
-    </div>
 
     <% if (@artists.empty?) && (@albums.empty?) %> <!--how to type in nothing and this comes up -->
       <script type="text/javascript">
