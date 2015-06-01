@@ -65,8 +65,13 @@ ul.nav.navbar-nav.side-nav li {
 }
 
 /*Star Rating Size*/
+div.star {
+  text-align: center;
+}
+
 div.star img {
-  height: 15px;
+  height: 18px;
+
 }
 #login {
   margin: 0 0 0 auto;
@@ -106,7 +111,7 @@ Artist Styling
 
 .artist-image {
   float: left;
-  padding: 0 1em 1em 0;
+  margin: 0 1em 1em 0;
 }
 .admin-links {
   font-size: .5em;
@@ -118,6 +123,32 @@ Artist Styling
   font-weight: bolder;
   font-size: 4em;
   font-variant: small-caps;
+  text-align: center;
+}
+
+#bio {
+  background-color: lightgrey;
+  border-radius: 1.5%;
+  margin: 9em 0 0 0;
+  padding: 2em;
+  border: 1px solid black;
+}
+
+#bio img {
+  border: 2px solid black;
+}
+
+.col-md-4 h2,
+.col-md-4 p {
+  text-align: center;
+}
+
+.artist-name {
+  padding-bottom: 3em;
+}
+
+.accordion_title {
+  border: 1px solid grey;
 }
 
 /*#bio {
@@ -126,14 +157,37 @@ Artist Styling
 
 #albums {
   display: none;
+  margin-top: 15em;
+}
+
+#albums p {
+  text-align: center;
+}
+
+#album-photo img {
+  display: block;
+  margin: 0 auto;
+}
+
+.track-list {
+  margin: 1em 0;
+  text-align: center; 
+  list-style-position: inside;
 }
 
 #pics {
   display: none;
 }
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 #YT {
   display: none;
+  display: block;
+  margin: 2em auto;
 }
 
 #twitter {
