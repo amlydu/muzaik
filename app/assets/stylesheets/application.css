@@ -332,6 +332,10 @@ Devise Form Styling
 /************************************************************************************
 Search Form Styling
 ************************************************************************************/
+.container.marketing.contact-page {
+  background-image: url("music.jpg");
+  background-attachment: fixed;
+}
 .thumbnail {
   display: none;
 }
@@ -438,14 +442,14 @@ Contact
   font-size: 14px;
 }
 .row.color {
-  background-color: rgba(157, 157, 157, 0.2);
+  background-color: rgba(255, 255, 255, 0.53);
   border-radius: 5px;
   margin: 23px 0;
 }
 #contact-title {
   text-align: center;
   padding: 15px 0 20px 0;
-  background-color: rgba(157, 157, 157, 0.2);
+  background-color: rgba(255, 255, 255, 0.53);
   border-radius: 5px;
   color: rgb(34, 34, 34);
 }
