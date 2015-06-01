@@ -4,13 +4,52 @@
   </p>
 <% else %>
 
-<div class="wrapper">
-  <div>
+<div class="artist-container">
+  <div id="wrapper">
+
+    <!-- Navigation -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+        <!-- CHANGE DASHBOARD URL/BASE!!-->
+        <li class="<%= is_active?(artist_path) %>" id="bio-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#bio">Biography</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(albums_path) %>" id="albums-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#albums">Albums</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="pics-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#pics">Pictures</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="YT-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="" data-toggle="#YT">Videos</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="twitter-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#twitter">Twitter</a>
+          </i>
+        </li>
+        <li class="<%= is_active?(artist_path) %>" id="FB-comments-btn">
+          <i class="fa  fa-arrow-circle-o-right">
+            <a href="#" data-toggle="#FB-comments">Discussion</a>
+          </i>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrapper">
     <div class="artist-name">
       <h1><%= @artist.name %>
       </h1>
       <p>
-        Rating: <%= rating_for @artist, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => true %>
+        <%= rating_for @artist, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => false %>
       </p>
       <div class="col-md-4">
         <h2>Genre</h2>
@@ -20,81 +59,92 @@
         <h2>Related Artists</h2>
         <% arr = @artist.related_artist.split(", ") %>
         <% arr.each do |art| %>
-          <% name = art.split.map(&:capitalize).join(' ') %>
-          <% if Artist.exists?(name: name) %>
-            <%= link_to art, artist_path(Artist.find_by(name: name)) %>
-          <% else %>
-            <%= p name %>
-          <% end %>
+        <% name = art.split.map(&:capitalize).join(' ') %>
+        <% if Artist.exists?(name: name) %>
+        <%= link_to art, artist_path(Artist.find_by(name: name)) %>
+        <% else %>
+        <%= p name %>
+        <% end %>
         <% end %>
       </div>
       <div class="col-md-4">
         <h2>Hotness</h2>
         <p><%= @artist.hotttnesss %></p>
+        <br>
+        <br>
       </div>
     </div>
+ 
+
+  <div id="bio">
+    <%= image_tag((@artist.photo), :class => "artist-image") %>
+    <%= simple_format(@artist.biography) %>
   </div>
-</dix>
 
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion"
-          href="#collapseOne">
-          Biography
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <%= image_tag((@artist.photo), :class => "artist-image") %>
-        <%= simple_format(@artist.biography) %>
-      </div>
+
+  <div id="albums">
+    <% @artist.albums.each do |album| %>
+      <% if album.photo? %>
+        <div class="accordion">
+          <h2 class="accordion_title">
+            <span class="album_title"><%= album.name %></span>
+            <br />
+            <span class ="smaller">(<%= album.songs.count %> Songs) <%= album.artist.name %></span><i class="accordion_icon fa fa-plus"></i>
+          </h2>
+          <div class="accordion_content">
+            <p>
+              Rating: <%= rating_for album, "overall", :star => 10, :enable_half => true, :half_show => true, :disable_after_rate => false, :cancel => false %>
+            </p>
+            <p>
+              <strong>Release date:</strong>
+              <%= album.release_date %>
+            </p>
+            <ul>
+              <% album.songs.each do |song| %>
+                <li><%= song.name %></li>
+              <% end %>
+            </ul>
+            <%= image_tag(album.photo) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <div id="pics">
+    <% if @artist.picture %>
+    <% pictures = @artist.picture.split("\", \"")[1..13] %>
+    <% pictures.each do |pic| %>
+    <%= image_tag(pic) %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div id="YT">
+    <iframe id="ytplayer" type="text/html" width="640" height="390"
+    src="https://www.youtube.com/embed?listType=search&list=<%= @artist.name %>"
+    frameborder="0"/></iframe>
+  </div>
+
+  <% if @artist.twitter %>
+  <div id="twitter">
+    <div id="demo" class="collapse in">
+      <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
     </div>
   </div>
-</div>
-
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion"
-          href="#collapseTwo">
-          Pictures
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <% if @artist.picture %>
-          <% pictures = @artist.picture.split("\", \"")[1..13] %>
-          <% pictures.each do |pic| %>
-            <%= image_tag(pic) %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="youtube">
-  <iframe id="ytplayer" type="text/html" width="640" height="390"
-  src="https://www.youtube.com/embed?listType=search&list=<%= @artist.name %>"
-  frameborder="0"/></iframe>
-</div>
-
-<% if @artist.twitter %>
-<button type="button" class="btn btn-primary" data-toggle="collapse"
+<!-- <button type="button" class="btn btn-primary" data-toggle="collapse"
    data-target="#demo">
    Tweets
-</button>
-  <div id="demo" class="collapse in">
-        <a class="twitter-timeline" href="https://twitter.com/<%= @artist.twitter %>" data-chrome="noheader nofooter" width="100" data-widget-id="603378251269038080" data-screen-name="<%= @artist.twitter %>">Tweets by @<% @artist.name %></a>
-  </div>
-<% end %>
+ </button> -->
+  <% end %>
 
-<div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light"></div>
+   <div id="FB-comments">
+    <div class="fb-comments" data-href="http://localhost:3000/artists/<%= @artist.id %>" data-numposts="5" data-colorscheme="light">
+    </div>
+  </div>
+  </div>
+</div>
 
 <% if current_user.try(:admin?) %>
   <%= link_to 'Edit', edit_artist_path(@artist) %> |

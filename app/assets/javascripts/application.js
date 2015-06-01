@@ -87,6 +87,45 @@ Twitter JS
     }
   (document,"script","twitter-wjs");
 
+/*********************************************************************
+Side Nav JS
+*********************************************************************/
+
+  // $('#bio-btn').click(function(){
+  //   $('#bio').toggle();
+  //   $('#albums, #pics, #YT, #twitter, #FB-comments').hide();
+  // });
+
+  // $('#albums-btn').click(function(){
+  //   $('#albums').toggle();
+  //   $('#bio, #pics, #YT, #twitter, #FB-comments').hide();
+  // });
+
+  // $('#pics-btn').click(function(){
+  //   $('#pics').toggle();
+  //   $('#albums, #bio, #YT, #twitter, #FB-comments').hide();  
+  // });
+
+  // $('#YT-btn').click(function(){
+  //   $('#YT').toggle();
+  //   $('#albums, #pics, #bio, #twitter, #FB-comments').hide();
+  // });
+
+  // $('#twitter-btn').click(function(){
+  //   $('#twitter').toggle();
+  //   $('#albums, #pics, #YT, #twitter, #FB-comments').hide();
+  // });
+
+  // $('#FB-comments-btn').click(function(){
+  //   $('#FB-comments').toggle();
+  // });  
+
+  $("a[data-toggle]").on("click", function(e) {
+    e.preventDefault();  // prevent navigating
+    var selector = $(this).data("toggle");  // get corresponding element
+    $("#bio, #albums, #pics, #YT, #twitter, #FB-comments").hide();
+    $(selector).show();
+  });
 
 };
 $(document).ready(ready);
