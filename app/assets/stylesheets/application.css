@@ -15,6 +15,7 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
  /************************************************************************************
  General Application Styling
  ************************************************************************************/
@@ -28,12 +29,10 @@
     font-family: 'Alfa';
     src: url("AlfaSlabOne-Regular.ttf");
 }
-
-#logo{
-  font-family: 'Alfa';
-  color:white;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;*/
+  font-weight: 800;
 }
-
 /* SLIDER */
 
 #slide-container{
