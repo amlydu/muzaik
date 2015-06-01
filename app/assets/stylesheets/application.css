@@ -53,6 +53,10 @@ img {
 input {
   color: black;
 }
+h1 {
+  font-variant: small-caps;
+  font-weight: bolder;
+}
 
 /* Left-Navbar Styling*/
 ul.nav.navbar-nav.side-nav {
@@ -109,6 +113,9 @@ a:active {
 i {
   color: grey;
 }
+i.accordion_icon.fa.fa-plus {
+  font-size: 1em;
+}
 .logo {
   width: 225px;
 }
@@ -160,13 +167,9 @@ Artist Styling
   border: 1px solid grey;
 }
 
-/*#bio {
-  display: none;
-}*/
-
 #albums {
   display: none;
-  margin-top: 15em;
+  margin-top: 8em;
 }
 
 #albums p {
@@ -176,6 +179,7 @@ Artist Styling
 #album-photo img {
   display: block;
   margin: 0 auto;
+  border-radius: 8%;
 }
 
 .track-list {
@@ -310,13 +314,19 @@ padding: 7px 0;
 .album-results h3 {
   text-align: center;
 }
-
-.album-results img {
-  display: block;
-  margin: 1em auto 4em auto;
-  border: 2px solid black;
+.thumbnail h3{
+  margin-top: 0;
 }
-
+.search-container a:hover {
+  color: black;
+}
+.artist-img-size img {
+  border-radius: 5px;
+  max-height: 250px;
+}
+article.artist-results.col-md-4 img {
+  border-radius: 5px;
+}
 .text-center {
   margin-top: 2em;
 }
