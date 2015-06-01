@@ -1,43 +1,54 @@
-<h1 class ="text-center">Search Results</h1>
+<div class="jumbotron">
+  <div class="container search-container">
+    <div class="row search-top">
+      <h1 class ="text-center">Search Results</h1>
 
-<div id="search-results">
-  <article class="artist-results">
-    <% if @artists.any? %>
-      <h1 style="text-decoration: underline">Matching Artists</h1>
-        <% @artists.each do |artist| %>
-          <h2><%= link_to artist.name, artist_path(artist) %></h2>
-          <%= link_to image_tag(artist.photo), artist_path(artist) %>
+      <div id="search-results">
+        <div class="row">
+          <% if @artists.any? %>
+            <% @artists.each do |artist| %>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <%= link_to image_tag(artist.photo), artist_path(artist), :class => "artist-img-size" %>
+                  <div class="caption">
+                    <h2 style="text-decoration: underline; font-variant: small-caps">Matching Artist</h2>
+                    <h3 class="text-center"><%= link_to artist.name, artist_path(artist) %></h3>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+          <% if @albums.any? %>
+            <% @albums.each do |album| %>
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <%= link_to image_tag(album.photo), album_path(album), :class => "artist-img-size" %>
+                  <div class="caption">
+                    <h2 style="text-decoration: underline; font-variant: small-caps">Matching Album</h2>
+                    <h3 class="text-center"><%= link_to album.name, artist_path(album.artist.id) %></h3>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      <% if (@artists.empty?) && (@albums.empty?) %> <!--how to type in nothing and this comes up -->
+        <script type="text/javascript">
+        $(window).load(function(){
+            $('#create-artist').modal('show');
+        });
+        </script>
+        <div>
+          <div id ="shruggie">
+            <br />
+            <br />
+            <br />
+            ¯\_(ツ)_/¯
+          </div>
+        </div>
+        <%= render "artists/form" %>
       <% end %>
-    <% end %>
-  </article>
-  <article class="album-results">
-    <% if @albums.any? %>
-      <h1 style="text-decoration: underline">Matching Albums</h1>
-        <% @albums.each do |album| %>
-          <h3><%= link_to album.name, album_path(album) %></h3>
-          <%= link_to image_tag(album.photo), album_path(album) %>
-        <% end %>
-    <% end %>
-  </article>
-</div>
-
-<% if (@artists.empty?) && (@albums.empty?) %> <!--how to type in nothing and this comes up -->
-  <script type="text/javascript">
-  $(window).load(function(){
-      $('#create-artist').modal('show');
-  });
-  </script>
-  <div>
-    <div id ="shruggie">
-      <br />
-      <br />
-      <br />
-      ¯\_(ツ)_/¯
     </div>
   </div>
-
-  <%= render "artists/form" %>
-<% end %>
-
-
-
+</div>
