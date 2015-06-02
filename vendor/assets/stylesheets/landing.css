@@ -2,7 +2,10 @@
  *= require_self
  *= require landing
 */
-
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 html {
   background: url("http://i.imgur.com/oh9jIhZ.jpg");
   min-height:100%;
@@ -19,19 +22,16 @@ body {
   -webkit-overflow-scrolling: touch;
   line-height: 1.5em;
   font-size:14px;
-  font-family: Helvetica, Arial, sans-serif;
   color:#fff;
   color:rgba(255,255,255,.8);
   font-weight: normal;
 }
-
 .landing-name{
   width: 100%;
   margin-bottom: -35%;
   margin-left: 4%;
   margin-top: -5%;
 }
-
 .container,
 .search-btn {
   text-align: center;
@@ -41,6 +41,12 @@ body {
   border-radius: 5px;
   padding: 10px;
   color: black;
+}
+.btn {
+  border-radius: 0;
+}
+.form-control {
+  border-radius: 0;
 }
 input.click-search-button {
   margin-top: 0;
@@ -67,7 +73,6 @@ div#lga {
 .notice h3 {
   text-align: center;
 }
-
 #explain{
   background-color:rgba(255,255,255,.3);
 
@@ -85,5 +90,4 @@ div#lga {
   color: white;
   font-size: 1.5em;
   text-align:center;
-
 }
