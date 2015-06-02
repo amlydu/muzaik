@@ -136,12 +136,9 @@ Artist Styling
 ************************************************************************************/
 html,
 #page-wrapper {
-  background-image: url("http://i.imgur.com/oh9jIhZ.jpg");
+  background-image: url("white.jpg");
   background-attachment: fixed;
   min-height: 100%;
-}
-div#artists-background {
-  background-color: rgba(255, 255, 255, 0.9);
 }
 .artist-image {
   float: left;
@@ -160,7 +157,6 @@ div#artists-background {
   font-size: 8em;
 }
 #bio {
-  background-color: rgba(255, 255, 255, 0.5);
   margin: 9em 0 0 0;
   padding: 2em;
   border-top: 3px solid black;
