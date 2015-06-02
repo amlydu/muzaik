@@ -233,6 +233,10 @@ Twitter Styling
 .twitter-timeline {
   width: 100% !important;
 }
+div#twitter-widget-0 {
+  width: 50%;
+  margin: 0 auto;
+}
 
 /************************************************************************************
 Albums Styling
