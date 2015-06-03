@@ -144,6 +144,12 @@ html,
   background-attachment: fixed;
   min-height: 100%;
 }
+
+#search-page-wrapper {
+  background-image: url("bw.jpg");
+  background-attachment: fixed;
+  min-height: 100%;
+}
 .artist-image {
   float: left;
   margin: 0 1em 1em 0;
@@ -417,7 +423,7 @@ input#search {
   padding-left: 12px;
 }
 div#shruggie {
-  height: 150px;
+  height: 400px;
   font-size: 5em;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
