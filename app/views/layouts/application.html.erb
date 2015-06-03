@@ -39,12 +39,12 @@
       </div>
     </nav>
 
-    <% if (controller_name == "search") && action_name == "search" %>
-      <% css_class = "search-page-wrapper" %>
-    <% else %>
-      <% css_class = "page-wrapper" %>
-    <% end %>
-    <div id="<%= css_class %>">
+  <% if (controller_name == "search") && action_name == "search" %>
+    <% css_class = "search-page-wrapper" %>
+  <% else %>
+    <% css_class = "page-wrapper" %>
+  <% end %>
+   <div id="<%= css_class %>">
       <div class="container-fluid">
         <!-- Page Heading -->
         <div class="row">
