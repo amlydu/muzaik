@@ -144,6 +144,12 @@ html,
   background-attachment: fixed;
   min-height: 100%;
 }
+#search-page-wrapper {
+  background-image: url("http://i.imgur.com/oh9jIhZ.jpg");
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
 .artist-image {
   float: left;
   margin: 0 1em 1em 0;
